@@ -166,7 +166,59 @@
     }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (min-width: 300px) and (max-width: 400px) {
+    
+    .container-elements {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr auto;
+    }
+
+    #menu {
+        height: 25px;
+        width: 25px;
+    }
+
+    .nav-text h4 {
+        font-size: 25px;
+    }
+
+    .container-elements-text {
+        padding: 0;
+    }
+
+    .im {
+        font-size: 20px;    
+    }
+
+    .name {
+        font-size: 20px;
+    }
+
+    .skill {
+        font-size: 30px;
+    }
+
+    .details-text-container {
+        margin: 20px 20px 0px 20px;
+    }
+
+    .details-text {
+        font-size: 14px;
+        line-height: 25px;
+        letter-spacing: 1px;
+    }
+
+    .container-elements-image {
+        justify-content: center;
+    }
+
+    #picture {
+        height: 250px;
+        /* display: none; */
+    }   
+}
+
+@media only screen and (min-width: 400px) and (max-width: 600px) {
     .container-elements {
         grid-template-columns: 1fr;
         grid-template-rows: 1fr auto;
@@ -193,7 +245,7 @@
     }
 
     .details-text {
-        font-size: 12px;
+        font-size: 14px;
     }
 
     .container-elements-image {
