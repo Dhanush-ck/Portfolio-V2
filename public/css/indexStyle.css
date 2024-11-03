@@ -16,12 +16,21 @@
     grid-template-rows: auto 1fr;
 }
 
+.container-light {
+    background-color: #efefef;
+    color: black;
+}
+
 .navigation-panel {
     background-color: #1f1f1f;
     padding: 20px;
     display: grid;
     grid-template-columns: auto 1fr;
     opacity: 0;
+}
+
+.navigation-panel-light {
+    background-color: #efefef;
 }
 
 #menu {
@@ -34,6 +43,10 @@
     justify-content: center;
     align-items: center;
     color: white;
+}
+
+.nav-text-light {
+    color: black;
 }
 
 .nav-text h4 {
@@ -91,9 +104,13 @@
     justify-content: center;
 }
 
-#picture {
+.picture {
     height: 600px;
     filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.2));
+}
+
+.picture-light {
+    filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.4));
 }
 
 .slideLeft {
