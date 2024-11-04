@@ -16,11 +16,6 @@
     grid-template-rows: auto 1fr;
 }
 
-.container-light {
-    background-color: #efefef;
-    color: black;
-}
-
 .navigation-panel {
     background-color: #1f1f1f;
     padding: 20px;
@@ -29,13 +24,15 @@
     opacity: 0;
 }
 
-.navigation-panel-light {
-    background-color: #efefef;
-}
-
 #menu {
     height: 30px;
     width: 30px;
+}
+
+#menu-black {
+    height: 30px;
+    width: 30px;
+    display: none;
 }
 
 .nav-text {
@@ -43,10 +40,6 @@
     justify-content: center;
     align-items: center;
     color: white;
-}
-
-.nav-text-light {
-    color: black;
 }
 
 .nav-text h4 {
@@ -109,9 +102,7 @@
     filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.2));
 }
 
-.picture-light {
-    filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.4));
-}
+
 
 .slideLeft {
     animation: slideLeft 1s ease forwards;
@@ -184,6 +175,34 @@
     }
 }
 
+@media (prefers-color-scheme: light){
+    .container {
+        background-color: #efefef;
+        color: black;
+    }
+
+    .navigation-panel {
+        background-color: #efefef;
+    }
+
+    #menu {
+        display: none;
+    }
+
+    #menu-black {
+        display: block;
+    }
+
+    .nav-text {
+        color: black;
+    }
+
+    .picture {
+        filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.4));
+    }
+    
+}
+
 @media only screen and (min-width: 300px) and (max-width: 400px) {
     
     .container-elements {
@@ -192,6 +211,11 @@
     }
 
     #menu {
+        height: 25px;
+        width: 25px;
+    }
+
+    #menu-black {
         height: 25px;
         width: 25px;
     }
@@ -242,6 +266,11 @@
     }
 
     #menu {
+        height: 25px;
+        width: 25px;
+    }
+
+    #menu-black {
         height: 25px;
         width: 25px;
     }
@@ -298,6 +327,11 @@
         width: 40px;
     }
 
+    #menu-black {
+        height: 40px;
+        width: 40px;
+    }
+
     .im {
         font-size: 45px;
     }
@@ -341,6 +375,11 @@
         width: 30px;
     }
 
+    #menu-black {
+        height: 30px;
+        width: 30px;
+    }
+
     .nav-text h4 {
         font-size: 25px;
     }
@@ -375,6 +414,11 @@
     }
 
     #menu {
+        height: 40px;
+        width: 40px;
+    }
+
+    #menu-black {
         height: 40px;
         width: 40px;
     }
@@ -417,6 +461,11 @@
         width: 50px;
     }
 
+    #menu-black {
+        height: 50px;
+        width: 50px;
+    }
+
     .nav-text h4 {
         font-size: 40px;
     }
@@ -455,6 +504,11 @@
 @media only screen and (min-width: 2000px) {
 
     #menu {
+        height: 60px;
+        width: 60px;
+    }
+
+    #menu-black {
         height: 60px;
         width: 60px;
     }
