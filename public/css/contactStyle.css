@@ -47,6 +47,29 @@
     letter-spacing: 5px;
 }
 
+.container-elements {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 300px;
+    width: 400px;
+    box-shadow: 0 0 5px white;
+    border-radius: 50px;
+    padding: 20px;
+}
+
+.contact h2 {
+    margin: 10px;
+}
+
 .slideDown {
     animation: slideDown 1s ease forwards;
 }
