@@ -70,6 +70,29 @@
     margin: 10px;
 }
 
+.contact-icons {
+    display: flex;
+}
+
+#linkedin, #instagram, #github {
+    height: 35px;
+    margin: 5px;
+}
+
+#linkedin:hover, #instagram:hover, #github:hover {
+    filter: drop-shadow(0 0 4px white);
+}
+
+#linkedinb, #instagramb, #githubb {
+    height: 35px;
+    margin: 5px;
+    display: none;
+}
+
+#linkedinb:hover, #instagramb:hover, #githubb:hover {
+    filter: drop-shadow(0 0 1px rgba(0, 0, 0, 1));
+}
+
 .slideDown {
     animation: slideDown 1s ease forwards;
 }
@@ -105,5 +128,17 @@
 
     .nav-text {
         color: black;
+    }
+
+    .contact {
+        box-shadow: 0 0 5px black;
+    }
+
+    #linkedin, #instagram, #github {
+        display: none;
+    }
+
+    #linkedinb, #instagramb, #githubb {
+        display: block;
     }
 }
