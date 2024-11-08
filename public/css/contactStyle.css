@@ -67,16 +67,18 @@
 }
 
 .contact h2 {
-    margin: 10px;
+    margin: 15px;
 }
 
 .contact-icons {
     display: flex;
+    margin: 80px 0 0 0 ;
 }
 
 #linkedin, #instagram, #github {
-    height: 35px;
-    margin: 5px;
+    height: 40px;
+    margin: 8px;
+    cursor: pointer;
 }
 
 #linkedin:hover, #instagram:hover, #github:hover {
@@ -86,11 +88,46 @@
 #linkedinb, #instagramb, #githubb {
     height: 35px;
     margin: 5px;
+    cursor: pointer;
     display: none;
 }
 
 #linkedinb:hover, #instagramb:hover, #githubb:hover {
     filter: drop-shadow(0 0 1px rgba(0, 0, 0, 1));
+}
+
+.message-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: none;
+}
+
+.message {
+    box-shadow: 0 0 0 5px white;
+    height: 300px;
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#link-src {
+    height: 20px;
+    width: 200px;
+    margin: 10px;
+}
+
+#copy, #visit {
+    height: 20px;
+    width: 50px;
 }
 
 .slideDown {
