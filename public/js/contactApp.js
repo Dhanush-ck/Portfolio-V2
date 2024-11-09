@@ -41,7 +41,6 @@ copy.onclick = ()=> {
 
 function showCopyMessage() {
     copyInfoContainer.style.display = 'flex';
-    copyInfoContainer.classList.remove('fadeOut');
     copyInfoContainer.classList.add('fadeIn');
     setTimeout(hideCopyMessage, 1500);
 }
@@ -51,7 +50,9 @@ function hideCopyMessage() {
     copyInfoContainer.classList.add('fadeOut');
     copyInfoContainer.addEventListener('animationend', ()=> {
         copyInfoContainer.style.display = 'none';
-    })
+        copyInfoContainer.classList.remove('fadeOut')
+    },
+    {once: true});
 }
 
 cross.onclick = ()=> {
