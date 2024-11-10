@@ -4,6 +4,7 @@ const github = document.querySelectorAll('.github-icon');
 
 const messageContainer = document.querySelector('.message-container');
 const messageIcon = document.getElementById('message-icon');
+const messageIconb = document.getElementById('message-iconb');
 const linkText = document.getElementById('link-src');
 const visit = document.getElementById('visit');
 const copy = document.getElementById('copy');
@@ -20,14 +21,29 @@ const links = {
     GitHub: 'https://github.com/Dhanush-ck'
 }
 
+const imageSrc = {
+    LinkedIn : {
+        white : "../img/linkedin-white.png",
+        dark : "../img/linkedin-black.png"
+    },
+    Instagram : {
+        white : "../img/instagram-white.png",
+        dark : "../img/instagram-black.png"
+    },
+    GitHub : {
+        white : "../img/github-white.png",
+        dark : "../img/github-black.png"
+    }
+}
+
 buttons.forEach(button => {
     button.onclick = ()=> {
         // containerElements.style.display = 'none';
         containerElements.style.filter = 'blur(10px)';
         messageContainer.style.display = 'flex';
-        messageIcon.src = button.src;
         const currentName = button.alt;
-        console.log(currentName);
+        messageIcon.src = imageSrc[currentName].white;
+        messageIconb.src = imageSrc[currentName].dark;
         linkText.value = links[currentName];
         visit.parentElement.href = links[currentName];
     }
