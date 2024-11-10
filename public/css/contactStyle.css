@@ -139,16 +139,29 @@
     height: 50px;
 }
 
+#message-iconb {
+    height: 50px;
+    display: none;
+}
+
 #link-src {
     height: 20px;
-    width: 200px;
+    width: 230px;
+    font-size: 15px;
     margin: 10px;
+    padding: 5px;
+    border-radius: 7px;
+    background-color: #efefef;
 }
 
 #copy, #visit {
-    height: 20px;
-    width: 50px;
+    height: 25px;
+    width: 55px;
+    font-size: 15px;
     cursor: pointer;
+    border-radius: 8px;
+    background-color: #efefef;
+    color: black;
 }
 
 .copy-info-container {
@@ -162,7 +175,7 @@
 
 #copy-info {
     color: white;
-    font-size: 20px;
+    font-size: 15px;
 }
 
 .slideDown {
@@ -239,4 +252,33 @@
     #linkedinb, #instagramb, #githubb {
         display: block;
     }
+
+    .message {
+        background-color: #efefef;
+        color: black;
+        box-shadow: 0 0 5px black;
+    }
+
+    .cross-container {
+        color: black;
+    }
+
+    #message-icon {
+        display: none;
+    }
+
+    #message-iconb {
+        display: block;
+    }
+
+    #link-src {
+        background-color: #1f1f1f;
+        color: white;
+    }
+
+    #copy, #visit {
+        background-color: #1f1f1f;
+        color: white;
+    }
+
 }
