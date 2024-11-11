@@ -282,3 +282,26 @@
     }
 
 }
+
+@media only screen and (min-width: 400px) and (max-width: 600px) {
+    
+    #menu {
+        height: 25px;
+        width: 25px;
+    }
+
+    #menu-black {
+        height: 25px;
+        width: 25px;
+    }
+
+    .nav-text h4 {
+        font-size: 25px;
+    }
+
+    #linkedin:hover, #instagram:hover, #github:hover {
+        filter: none;
+    }
+    
+
+}
