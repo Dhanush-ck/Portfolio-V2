@@ -130,7 +130,8 @@
 }
 
 #cross {
-    margin: -70px 20px 0 0 ;
+    /* margin: -70px 20px 0 0 ; */
+    translate: -20px -55px 0;
     font-size: 30px;
     cursor: pointer;
 }
@@ -294,8 +295,16 @@
         font-size: 25px;
     }
 
+    .contact {
+        width: 250px;
+    }
+
+    #linkedin:hover, #instagram:hover, #github:hover, #linkedinb:hover, #instagramb:hover, #githubb:hover {
+        filter: none;
+    }
+
     .message {
-        width: 350px;
+        width: 300px;
     }
 }
 
@@ -315,9 +324,66 @@
         font-size: 25px;
     }
 
-    #linkedin:hover, #instagram:hover, #github:hover {
+    #linkedin:hover, #instagram:hover, #github:hover, #linkedinb:hover, #instagramb:hover, #githubb:hover {
         filter: none;
     }
     
+    .message {
+        width: 350px;
+    }
 
+}
+
+@media only screen and (min-width: 600px) and (max-width: 800px) {
+    #menu, #menu-black {
+        width: 40px;
+        height: 40px;
+    }
+
+    .nav-text h4 {
+        font-size: 35px;
+    }
+
+    .contact {
+        height: 350px;
+        width: 450px;
+    }
+
+    .contact h2 {
+        font-size: 35px;
+    }
+
+    #linkedin, #instagram, #github, #linkedinb, #instagramb, #githubb {
+        height: 50px;
+    }
+
+    #linkedin:hover, #instagram:hover, #github:hover, #linkedinb:hover, #instagramb:hover, #githubb:hover {
+        filter: none;
+    }
+
+    .message {
+        height: 400px;
+        width: 500px;
+    }
+
+    #cross {
+        font-size: 40px;
+    }
+
+    #message-icon, #message-iconb {
+        height: 70px;
+    }
+
+    #link-src {
+        height: 30px;
+        width: 320px;
+        font-size: 20px;
+        margin: 15px;
+    }
+
+    #copy, #visit {
+        height: 40px;
+        width: 70px;
+        font-size: 20px;
+    }
 }
