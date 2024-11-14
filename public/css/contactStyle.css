@@ -387,3 +387,58 @@
         font-size: 20px;
     }
 }
+
+@media only screen and (min-width: 800px) and (max-width: 992px) {
+    #menu, #menu-black {
+        height: 40px;
+        width: 40px;
+    }
+
+    .nav-text h4 {
+        font-size: 35px;
+    }
+
+    .contact {
+        height: 300px;
+        width: 400px;
+    }
+
+    .contact h2 {
+        font-size: 35px;
+    }
+
+    #linkedin, #instagram, #github, #linkedinb, #instagramb, #githubb {
+        height: 50px;
+    }
+
+    #linkedin:hover, #instagram:hover, #github:hover, #linkedinb:hover, #instagramb:hover, #githubb:hover {
+        filter: none;
+    }  
+
+    .message {
+        height: 400px;
+        width: 500px;
+    }
+
+    #cross {
+        font-size: 40px;
+        translate: -30px -70px 0;
+    }
+
+    #message-icon, #message-iconb {
+        height: 70px;
+    }
+
+    #link-src {
+        height: 30px;
+        width: 320px;
+        font-size: 20px;
+        margin: 15px;
+    }
+
+    #copy, #visit {
+        height: 40px;
+        width: 70px;
+        font-size: 20px;
+    }
+}
