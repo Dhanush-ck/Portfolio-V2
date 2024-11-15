@@ -76,6 +76,12 @@
     height: 500px;
 }
 
+.contact-icons img {
+    opacity: 0;
+    animation: slideUp 1s ease forwards;
+    animation-delay: calc(.1s * var(--i));
+}
+
 #linkedin, #instagram, #github {
     height: 40px;
     margin: 8px;
@@ -153,6 +159,7 @@
     padding: 5px;
     border-radius: 7px;
     background-color: #efefef;
+    text-align: center;
 }
 
 #copy, #visit {
@@ -179,8 +186,16 @@
     font-size: 15px;
 }
 
+.slideUp {
+    animation: slideUp 1s ease forwards;
+}
+
 .slideDown {
     animation: slideDown 1s ease forwards;
+}
+
+.slideDown25 {
+    animation: slideDown25 1s ease forwards;
 }
 
 .fadeIn {
@@ -191,9 +206,31 @@
     animation: fadeOut 1s ease forwards;
 }
 
+@keyframes slideUp {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
 @keyframes slideDown {
     0% {
         transform: translateY(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown25 {
+    0% {
+        transform: translateY(-25px);
         opacity: 0;
     }
     100% {
@@ -282,6 +319,9 @@
         color: white;
     }
 
+    #copy-info {
+        color: black;
+    }
 }
 
 @media only screen and (min-width: 300px) and (max-width: 400px) {
@@ -440,5 +480,159 @@
         height: 40px;
         width: 70px;
         font-size: 20px;
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+    #menu, #menu-black {
+        height: 40px;
+        width: 40px;
+    }
+
+    .nav-text h4 {
+        font-size: 35px;
+    }
+
+    .contact {
+        height: 400px;
+        width: 500px;
+    }
+
+    .contact h2 {
+        font-size: 35px;
+    }
+
+    #linkedin, #instagram, #github, #linkedinb, #instagramb, #githubb {
+        height: 60px;
+    }
+
+    #linkedin:hover, #instagram:hover, #github:hover, #linkedinb:hover, #instagramb:hover, #githubb:hover {
+        filter: none;
+    }
+
+    .message {
+        height: 400px;
+        width: 550px;
+    }
+
+    #cross {
+        font-size: 40px;
+        translate: -30px -70px 0;
+    }
+
+    #message-icon, #message-iconb {
+        height: 70px;
+    }
+
+    #link-src {
+        height: 30px;
+        width: 350px;
+        font-size: 23px;
+        margin: 15px;
+    }
+
+    #copy, #visit {
+        height: 40px;
+        width: 70px;
+        font-size: 20px;
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) and (max-height: 600px) {
+    #menu, #menu-black {
+        height: 30px;
+        width: 30px;
+    }
+
+    .nav-text h4 {
+        font-size: 25px;
+    }
+
+    .contact {
+        height: 250px;
+        width: 380px;
+    }
+
+    .contact h2 {
+        font-size: 25px;
+    }
+
+    #linkedin, #instagram, #github, #linkedinb, #instagramb, #githubb {
+        height: 40px;
+    }
+
+    #linkedin:hover, #instagram:hover, #github:hover, #linkedinb:hover, #instagramb:hover, #githubb:hover {
+        filter: none;
+    }  
+
+    .message {
+        height: 300px;
+        width: 400px;
+    }
+
+    #cross {
+        font-size: 35px;
+        translate: -25px -50px 0;
+    }
+
+    #message-icon, #message-iconb {
+        height: 60px;
+    }
+
+    #link-src {
+        height: 25px;
+        width: 320px;
+        font-size: 18px;
+        margin: 15px;
+    }
+
+    #copy, #visit {
+        height: 30px;
+        width: 65 px;
+        font-size: 18px;
+    }
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1400px) and (min-height: 700px) {
+    .contact {
+        height: 300px;
+        width: 450px;
+    }
+
+    .contact h2 {
+        font-size: 25px;
+    }
+
+    #linkedin, #instagram, #github, #linkedinb, #instagramb, #githubb {
+        height: 50px;
+    }
+
+    #linkedin:hover, #instagram:hover, #github:hover, #linkedinb:hover, #instagramb:hover, #githubb:hover {
+        filter: none;
+    }  
+
+    .message {
+        height: 350px;
+        width: 450px;
+    }
+
+    #cross {
+        font-size: 40px;
+    }
+
+    #message-icon, #message-iconb {
+        height: 60px;
+    }
+
+    #link-src {
+        height: 30px;
+        width: 320px;
+        font-size: 18px;
+    }
+
+    #copy, #visit {
+        height: 40px;
+        width: 70px;
+        font-size: 18px;
     }
 }
