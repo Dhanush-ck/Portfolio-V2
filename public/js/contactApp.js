@@ -2,6 +2,7 @@ const linkedin = document.querySelectorAll('.linkedin-icon');
 const instagram = document.querySelectorAll('.instagram-icon');
 const github = document.querySelectorAll('.github-icon');
 
+const navigationPanel = document.querySelector('.navigation-panel');
 const messageContainer = document.querySelector('.message-container');
 const messageIcon = document.getElementById('message-icon');
 const messageIconb = document.getElementById('message-iconb');
@@ -40,6 +41,7 @@ buttons.forEach(button => {
     button.onclick = ()=> {
         // containerElements.style.display = 'none';
         containerElements.style.filter = 'blur(10px)';
+        navigationPanel.style.filter = 'blur(10px)';
         messageContainer.style.display = 'flex';
         const currentName = button.alt;
         messageIcon.src = imageSrc[currentName].white;
@@ -72,9 +74,12 @@ function hideCopyMessage() {
 }
 
 cross.onclick = ()=> {
-    const filterInfo = containerElements.style.filter;
-    if(filterInfo == 'blur(10px)'){
-        containerElements.style.filter = 'none';
-        messageContainer.style.display = 'none';
-    }
+    const filterInfos = [containerElements.style.filter, navigationPanel.style.filter];
+    filterInfos.forEach(filterInfo=> {
+        if(filterInfo == 'blur(10px)'){
+            containerElements.style.filter = 'none';
+            navigationPanel.style.filter = 'none';
+            messageContainer.style.display = 'none';
+        }
+    })
 }
