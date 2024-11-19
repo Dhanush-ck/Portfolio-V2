@@ -102,7 +102,22 @@
     filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.2));
 }
 
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+    border-radius: 20px;
+    border: none;
+}
 
+::-webkit-scrollbar-track {
+    background: #1f1f1f;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #1f1f1f;
+    border-radius: 20px;
+    border: 3px solid #bbb;
+}
 
 .slideLeft {
     animation: slideLeft 1s ease forwards;
@@ -176,6 +191,16 @@
 }
 
 @media (prefers-color-scheme: light){
+    ::-webkit-scrollbar-track {
+        background: #ddd;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        background-color: #ddd;
+        border-radius: 20px;
+        border: 3px solid #555;
+    }
+
     .container {
         background-color: #efefef;
         color: black;
