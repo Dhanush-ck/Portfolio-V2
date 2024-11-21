@@ -65,6 +65,12 @@
     color: white;
 }
 
+.animationIn {
+    opacity: 0;
+    animation: fadeIn 2s ease forwards;
+    animation-delay: calc(.4s * var(--i));
+}
+
 .first-block {
     /* margin: 10px 0 10px 10px; */
     padding: 10px;
@@ -82,6 +88,7 @@
     /* margin: 10px 0 10px 10px; */
     justify-content: space-between;
     border: 1px solid #add8ff;
+    background-color: #282828;
 }
 
 .about-me img {
@@ -106,6 +113,7 @@
     flex-direction: column;
     height: calc(100% - 40px);
     overflow: hidden;
+    background-color: #282828;
 }
 
 .details h2 {
@@ -118,6 +126,12 @@
     grid-template-columns: 1fr 40px 1fr;
     width: 100%;
     /* border: 0.4px solid #fff; */
+}
+
+.details-content span {
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+    animation-delay: calc(.1s * var(--i));
 }
 
 .left {
@@ -135,8 +149,9 @@
 
 .second-block {
     /* margin: 10px; */
+    margin: 0 5px 0 0;
     padding: 10px;
-    height: 100%;
+    /* height: 100%; */
     display: grid;
     grid-template-rows: auto 1fr;
     grid-auto-rows: 1fr;
@@ -154,15 +169,23 @@
     align-items: center;
     /* justify-content: center; */
     flex-direction: column;
+    background-color: #282828;
+    overflow: hidden;
 }
 
 .education h2 {
     margin: 10px;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 1s;
 }
 
 .education-contents {
     overflow-y: auto;
     border: 1px solid #aaffaa;
+    opacity: 0;
+    animation: slideUp 1s ease forwards;
+    animation-delay: 1.4s;
 }
 
 .education-contents::-webkit-scrollbar {
@@ -195,22 +218,35 @@ table, tr, td {
     padding: 10px;
     border: 1px solid #ffaaff;
     width: 100%;
-    max-height: 283px;
+    max-height: 282px;
     display: flex;
     /* justify-content: center; */
     align-items: center;
     flex-direction: column;
     /* display: none; */
+    background-color: #282828;
+    overflow: hidden;
 }
 
 .experience h2 {
     margin: 10px;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 1.4s;
 }
 
 .experience-contents {
     overflow-y: auto;
     border: 1px solid #ffaaff;
     /* height: 210px; */ 
+    width: 100%;
+    opacity: 0;
+    animation: slideUp 1s ease forwards;
+    animation-delay: 1.8s;
+}
+
+.experience1 {
+    width: 100%;
 }
 
 .experience-contents table, .experience-contents tr, .experience-contents td {
@@ -247,6 +283,18 @@ table, tr, td {
     animation: slideDown 1s ease forwards;
 }
 
+.slideLeft {
+    animation: slideLeft 1s ease forwards;
+}
+
+.fadeIn {
+    animation: fadeIn 1s ease forwards;
+}
+
+.rotate90 {
+    animation: rotate90 1s ease forwards;
+}
+
 @keyframes slideDown {
     0% {
         transform: translateY(-50px);
@@ -254,6 +302,48 @@ table, tr, td {
     }
     100% {
         transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes slideLeft {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes rotate90 {
+    0% {
+        rotate: 90deg;
+        opacity: 0;
+    }
+    100% {
+        rotate: 0deg;
         opacity: 1;
     }
 }
