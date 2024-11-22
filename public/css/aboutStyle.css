@@ -14,6 +14,7 @@
     color: white;
     display: grid;
     grid-template-rows: auto 1fr;
+    overflow-y: hidden;
 }
 
 .navigation-panel {
@@ -54,7 +55,7 @@
     margin: 20px;
     font-size: 18px;
     line-height: 28px;
-    height: calc(100% - 40px);
+    height: calc(100% - 44px);
 }
 
 .container-elements a {
@@ -87,7 +88,7 @@
     width: 100%;
     /* margin: 10px 0 10px 10px; */
     justify-content: space-between;
-    border: 1px solid #add8ff;
+    border: 2px solid #add8ff;
     background-color: #282828;
 }
 
@@ -106,12 +107,12 @@
     /* margin: 10px 0 10px 10px; */
     padding: 10px;
     width: 100%;
-    border: 1px solid #ffaad0;
+    border: 2px solid #ffaad0;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: calc(100% - 40px);
+    height: calc(100% - 48px);
     overflow: hidden;
     background-color: #282828;
 }
@@ -162,7 +163,7 @@
 .education {
     /* margin: 10px 10px 10px 0; */
     padding: 10px;
-    border: 1px solid #aaffaa;
+    border: 2px solid #aaffaa;
     width: 100%;
     max-height: 300px;
     display: flex;
@@ -182,7 +183,7 @@
 
 .education-contents {
     overflow-y: auto;
-    border: 1px solid #aaffaa;
+    border: 2px solid #aaffaa;
     opacity: 0;
     animation: slideUp 1s ease forwards;
     animation-delay: 1.4s;
@@ -215,8 +216,9 @@ table, tr, td {
 
 .experience {
     /* margin: 10px 10px 10px 0; */
+    margin: 0 0 5px 0;
     padding: 10px;
-    border: 1px solid #ffaaff;
+    border: 2px solid #ffaaff;
     width: 100%;
     max-height: 282px;
     display: flex;
@@ -357,5 +359,74 @@ table, tr, td {
         background-color: #ddd;
         border-radius: 20px;
         border: 3px solid #555;
+    }
+
+    .container {
+        color: black;
+        background-color: #efefef;
+    }
+
+    .navigation-panel {
+        background-color: #efefef;
+    }
+
+    #menu {
+        display: none;
+    }
+
+    #menu-black {
+        display: block;
+    }
+
+    .nav-text {
+        color: black;
+    }
+
+    .container-elements a {
+        color: #555;
+    }
+
+    .container-elements a:hover {
+        color: black;
+    }
+
+    .about-me {
+        background-color: #d8d8d8;
+    }
+
+    .details {
+        background-color: #d8d8d8;
+    }
+
+    .details h2 {
+        border-bottom: 2px solid #000;
+    }
+
+    .education {
+        background-color: #d8d8d8;
+    }
+ 
+    .education-contents {
+        border: 1px solid black;
+    }
+    
+    table, tr, td {
+        border: 1px solid black;
+        border-right: none;
+        border-left: none;
+    }
+
+    .experience {
+        background-color: #d8d8d8;
+    }
+
+    .experience-contents {
+        border: 1px solid black;
+    }
+
+    .experience-contents table, .experience-contents tr, .experience-contents td {
+        border: 1px solid black;
+        border-right: none;
+        border-left: none;
     }
 }
