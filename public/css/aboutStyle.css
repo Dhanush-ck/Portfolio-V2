@@ -187,6 +187,7 @@
     opacity: 0;
     animation: slideUp 1s ease forwards;
     animation-delay: 1.4s;
+    width: 100%;
 }
 
 .education-contents::-webkit-scrollbar {
@@ -428,5 +429,399 @@ table, tr, td {
         border: 1px solid black;
         border-right: none;
         border-left: none;
+    }
+}
+
+@media only screen and (min-width: 300px) and (max-width: 400px) {
+    .container {
+        overflow-y: auto;
+        height: auto;
+    }
+
+    #menu, #menu-black {
+        height: 25px;
+        width: 25px;
+    }
+
+    .nav-text h4 {
+        font-size: 25px;
+    }
+
+    .container-elements {
+        grid-template-columns: 1fr;
+        margin: 20px 30px 20px 20px;
+        font-size: 16px;
+        line-height: 22px;
+        gap: 0px;
+    }
+
+    .first-block {
+        margin: 0 10px 0 0 ;
+    }
+
+    .about-me img {
+        margin: 10px 10px 0px 0;
+        height: 180px;
+        width: 180px;
+    }
+
+    .second-block {
+        margin: 0 10px 0 0 ;
+    }
+}
+
+@media only screen and (min-width: 400px) and (max-width: 600px) {
+    .container {
+        overflow-y: auto;
+        height: auto;
+    }
+
+    #menu, #menu-black {
+        height: 25px;
+        width: 25px;
+    }
+
+    .nav-text h4 {
+        font-size: 25px;
+    }
+
+    .container-elements{
+        grid-template-columns: 1fr;
+        margin: 20px 30px 20px 20px ;
+        gap: 0px;
+    }
+
+    .about-me img {
+        margin: 10px 10px 0 0;
+    }
+
+    .second-block{
+        margin: 0;
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 800px) {
+
+    .container {
+        overflow-y: auto;
+        height: auto;
+    }
+
+    #menu, #menu-black {
+        height: 35px;
+        width: 35px;
+    }
+
+    .nav-text h4 {
+        font-size: 35px;
+    }
+
+    .container-elements {
+        grid-template-columns: 1fr;
+        font-size: 24px;
+        line-height: 34px;
+        margin: 20px 30px 20px 20px;
+        gap: 0px;
+    }
+
+    .about-me img {
+        height: 235px;
+        width: 235px;
+    }
+
+    .second-block {
+        margin: 0;
+    }
+
+}
+
+@media only screen and (min-width: 800px) and (max-width: 992px) {
+
+    .container {
+        height: auto;
+        overflow-y: auto;
+    }
+    
+    #menu, #menu-black {
+        height: 35px;
+        width: 35px;
+    }
+
+    .nav-text h4 {
+        font-size: 35px;
+    }
+
+    .container-elements {
+        font-size: 24px;
+        line-height: 34px;
+        grid-template-columns: 1fr;
+        margin: 20px 40px 20px 20px ;
+        gap: 0px;
+    }
+
+    .about-me h2 {
+        margin: 20px 10px 10px 10px;
+    }
+
+    .about-me img {
+        height: 240px;
+        width: 240px;
+    }
+
+    .details h2 {
+        margin: 20px;
+    }
+
+    .details-content {
+        margin: 0 20px 20px 20px;
+    }
+
+    .second-block {
+        margin: 0;
+    }
+
+    .education {
+        max-height: 325px;
+    }
+
+    .education h2 {
+        margin: 10px 10px 20px 10px;
+    }
+
+    .experience {
+        max-height: 300px;
+    }
+
+    .experience h2 {
+        margin: 10px 10px 20px 10px;
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) and (max-height: 1000px){
+    .container {
+        overflow-y: auto;
+    }
+
+    .education {
+        max-height: none;
+        justify-content: center;
+    }
+
+    .education-contents {
+        min-height: 300px;
+        max-height: calc(50vh - 160px);
+    }
+    
+    .experience {
+        max-height: none;
+        justify-content: center;
+    }
+
+    .experience-contents {
+        min-height: 275px;
+        max-height: calc(50vh - 140px);
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) and (min-height: 1000px) and (max-height: 1200px){
+
+    .container-elements {
+        font-size: 22px;
+        line-height: 32px;
+    }
+
+    .education {
+        max-height: none;
+        justify-content: center;
+    }
+
+    .education-contents{
+        max-height: calc(50vh - 160px);
+    }
+
+    .experience {
+        max-height: none;
+        justify-content: center;
+    }
+
+    .experience-contents {
+        max-height: calc(50vh - 160px);
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) and (min-height: 1200px) {
+
+    #menu, #menu-black {
+        height: 40px;
+        width: 40px;
+    }
+
+    .nav-text h4 {
+        font-size: 40px;
+    }
+
+    .container-elements {
+        font-size: 24px;
+        line-height: 34px;
+    }
+
+    .second-block {
+        grid-template-rows: 1fr 1fr;
+    }
+
+    .education {
+        max-height: none;
+        justify-content: center
+    }
+
+    .education h2 {
+        margin: 20px;
+    }
+
+    .education-contents {
+        min-height: 300px;
+        max-height: calc(50vh - 180px);
+    }
+
+    .experience {
+        max-height: none;
+        justify-content: center;
+    }
+
+    .experience h2 {
+        margin: 20px;
+    }
+
+    .experience-contents {
+        min-height: 150px;
+        max-height: calc(50vh - 180px);
+    }
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1400px) and (min-height: 700px) {
+
+    .container-elements {
+        font-size: 20px;
+    }
+
+    .education {
+        max-height: none;
+        justify-content: center;
+    }
+
+    .education-contents {
+        min-height: 300px;
+        max-height: calc(50vh - 160px);
+    }
+    
+    .experience {
+        max-height: none;
+        justify-content: center;
+    }
+
+    .experience-contents {
+        min-height: 282px;
+        max-height: calc(50vh - 160px);
+    }
+}
+
+@media only screen and (min-width:1400px) and (max-width: 2000px) {
+
+    .container {
+        overflow-y: hidden;
+    }
+
+    .education {
+        max-height: none;
+    }
+
+    .education-contents {
+        min-height: 260px;
+        max-height: calc(50vh - 160px);
+    }
+    
+    .experience {
+        max-height: none;
+        justify-content: center;
+    }
+    
+    .experience-contents {
+        min-height: 230px;
+        max-height: calc(50vh - 160px);
+    }
+}
+
+@media only screen and (min-width:2000px) {
+    #menu, #menu-black {
+        height: 45px;
+        width: 45px;
+    }
+
+    .nav-text h4 {
+        font-size: 45px;
+    }
+
+    .container-elements {
+        font-size: 28px;
+        line-height: 38px;
+    }
+    
+    .about-me h2 {
+        margin: 20px
+    }
+
+    .about-me img {
+        height: 250px;
+        width: 250px;
+    }
+
+    .details h2 {
+        margin: 20px;
+    }
+
+    .details-content {
+        margin: 0 10px 10px 10px;
+    }
+
+    .second-block {
+        grid-template-rows: 1fr 1fr;
+    }
+
+    .education {
+        justify-content: center;
+        max-height: none;
+    }
+
+    .education-contents {
+        min-height: 300px;
+        max-height: calc(50vh - 160px);
+    }
+
+    .experience {
+        max-height: none;
+        justify-content: center;
+    }
+
+    .experience-contents {
+        min-height: 300px;
+        max-height: calc(50vh - 160px);
+    }
+}
+
+@media only screen and (max-width: 1400px) and (max-height: 775px) {
+    .container {
+        overflow-y: auto;
+    }
+}
+
+@media only screen and (min-width: 1400px) and (max-height: 765px) {
+    .container {
+        overflow-y: auto;
+    }
+}
+
+@media only screen and (min-width: 2000px) and (max-height: 910px) {
+    .container {
+        overflow-y: auto;
     }
 }
