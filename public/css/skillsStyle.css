@@ -238,6 +238,10 @@
     animation: fadeOut 1s ease forwards;
 }
 
+.fadeOut7 {
+    animation: fadeOut 0.7s ease forwards;
+}
+
 .scaleUp {
     animation: scaleUp 1s ease forwards;
 }
