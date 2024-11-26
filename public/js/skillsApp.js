@@ -117,16 +117,19 @@ var currentSort;
 dropdowns.forEach((dropdown)=> {
     dropdown.addEventListener('mouseover', ()=>{
         list.classList.add('fadeIn');
-        list.classList.remove('fadeOut');
+        list.classList.remove('fadeOut7');
         list.classList.add('show');
         arrow.style.transform = "rotate(180deg)";
     })
     
     dropdown.addEventListener('mouseout', ()=> {
         arrow.style.transform = "rotate(0deg)";
-        list.classList.add('fadeOut');
-        list.addEventListener('fadeOut', ()=>{
-            list.classList.remove('show');
+        list.classList.add('fadeOut7');
+        list.addEventListener('animationend', (e)=>{
+            if(e.animationName ===  'fadeOut'){
+                list.classList.remove('show');
+            }
+            list.removeEventListener('animationend', e);
         })
     })
 })
@@ -134,16 +137,19 @@ dropdowns.forEach((dropdown)=> {
 dropdownsLeft.forEach((dropdownLeft)=>{
     dropdownLeft.addEventListener('mouseover', ()=>{
         listLeft.classList.add('fadeIn');
-        listLeft.classList.remove('fadeOut');
+        listLeft.classList.remove('fadeOut7');
         listLeft.classList.add('show');
         arrowLeft.style.transform = "rotate(180deg)";
     })
     
     dropdownLeft.addEventListener('mouseout', ()=> {
         arrowLeft.style.transform = "rotate(0deg)";
-        listLeft.classList.add('fadeOut');
-        listLeft.addEventListener('fadeOut', ()=>{
-            listLeft.classList.remove('show');
+        listLeft.classList.add('fadeOut7');
+        listLeft.addEventListener('animationend', (e)=>{
+            if(e.animationName ===  'fadeOut'){
+                listLeft.classList.remove('show');
+            }
+            listLeft.removeEventListener('animationend', e);
         })
     })
 })
