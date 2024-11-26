@@ -135,6 +135,79 @@
     display: block;
 }
 
+.projects {
+    overflow-y: auto;
+    /* max-height: calc(100vh - 100px); */
+    display:  grid;
+    grid-template-columns:  repeat(auto-fit, minmax(350px, 1fr));
+    gap: 10px;
+    margin: 10px;
+}
+
+.projects-elements {
+    margin: 10px;
+    background-color: #282828;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 20px;
+    padding: 10px;
+    position: relative;
+}
+
+.projects-elements img {
+    width: 100%;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.project-name {
+    font-size: 20px;
+    margin: 10px;
+}
+
+.projects-elements p {
+    font-weight: 100;
+    margin: 10px;
+    line-height: 20px;
+}
+
+.hover-div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    background-color: #222;
+    border-radius: 20px;
+}
+
+/* .hover-div:hover {
+    opacity: 0.9;
+} */
+
+.hover-button {
+    background-color: white;
+    color: black;
+    width: 100px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.show-hover {
+    opacity: 1;
+}
+
 .slideDown {
     animation: slideDown 1s ease forwards;
 }
@@ -143,8 +216,20 @@
     animation: fadeIn 1s ease forwards;
 }
 
+.fadeInO9 {
+    animation: fadeIn9 0.3s ease forwards;
+}
+
 .fadeOut {
     animation: fadeOut 1s ease forwards;
+}
+
+.fadeOut7 {
+    animation: fadeOut 0.7s ease forwards;
+}
+
+.fadeOutO9 {
+    animation: fadeOut9 0.3s ease forwards;
 }
 
 @keyframes slideDown {
@@ -167,9 +252,27 @@
     }
 }
 
+@keyframes fadeIn9 {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0.9;
+    }
+}
+
 @keyframes fadeOut {
     0% {
         opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeOut9 {
+    0% {
+        opacity: 0.9;
     }
     100% {
         opacity: 0;
