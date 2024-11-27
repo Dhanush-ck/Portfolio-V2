@@ -120,8 +120,10 @@ function sortElements(e) {
         tempLists.sort((a,b)=>a.order-b.order)
     }
     projects.innerHTML = " ";
+    var i = 1;
     tempLists.forEach((tempList)=>{
-        projects.innerHTML += `<div class="projects-elements"><img src="${tempList.src}"><span class="project-name">${tempList.name}</span><p>${tempList.details}</p><div class="hover-div"><span class="hover-button">View</span></div></div>`;
+        projects.innerHTML += `<div class="projects-elements" style="--i:${i}"><img src="${tempList.src}"><span class="project-name">${tempList.name}</span><p>${tempList.details}</p><div class="hover-div"><span class="hover-button">View</span></div></div>`;
+        i++;
     }) 
     hoverDivs = document.querySelectorAll('.hover-div');
 }
