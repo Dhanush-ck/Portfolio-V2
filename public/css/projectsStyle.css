@@ -190,9 +190,9 @@
     border-radius: 20px;
 }
 
-/* .hover-div:hover {
-    opacity: 0.9;
-} */
+.hover-div a {
+    text-decoration: none;
+}
 
 .hover-button {
     background-color: white;
