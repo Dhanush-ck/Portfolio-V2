@@ -35,6 +35,7 @@ dropdowns.forEach((dropdown)=> {
 const projectList = [{
                         name : "Portfolio V1",
                         src : "../img/portfoliov1.png",
+                        link : "./projects/portfolio-v1.html",
                         order : 1,
                         details : "This is my first portfolio website, sharing about my details, skills and contact info. Simple UI and easy to understand.",
                         language : [
@@ -47,6 +48,7 @@ const projectList = [{
                     {
                         name : "Image Gallery",
                         src : "../img/imagegallery.png",
+                        link : "./projects/image-gallery.html",
                         order : 2,
                         details : "It is an image gallery showing images in grid, we can add, remove & replace images. It also contians slideshow feature.",
                         language : [
@@ -59,6 +61,7 @@ const projectList = [{
                     {
                         name : "Stone Paper Scissors",
                         src : "../img/stonepaper.png",
+                        link : "./projects/stone-paper-scissor.html",
                         order : 3,
                         details : "This is a digital interface for the normal Rock Paper Scissor we use to play with our hands. In this we play with the computer.",
                         language : [
@@ -71,6 +74,7 @@ const projectList = [{
                     {
                         name : "Tic Tac Toe",
                         src : "../img/tictactoe.png",
+                        link : "./projects/tic-tac-toe.html",
                         order : 4,
                         details : "This is XOX or Tic Tac Toe game. It is two player game, played using X and O. Player who get three consecutively.",
                         language : [
@@ -83,6 +87,7 @@ const projectList = [{
                     {
                         name : "Portfolio V2",
                         src : "../img/portfoliov2.png",
+                        link : "./projects/portfolio-v2.html",
                         order : 5,
                         details : "My latest portfolio. Contains features that aren't in the first portfolio. It has an attractive and simple UI.",
                         language : [
@@ -122,7 +127,7 @@ function sortElements(e) {
     projects.innerHTML = " ";
     var i = 1;
     tempLists.forEach((tempList)=>{
-        projects.innerHTML += `<div class="projects-elements" style="--i:${i}"><img src="${tempList.src}"><span class="project-name">${tempList.name}</span><p>${tempList.details}</p><div class="hover-div"><span class="hover-button">View</span></div></div>`;
+        projects.innerHTML += `<div class="projects-elements" style="--i:${i}"><img src="${tempList.src}"><span class="project-name">${tempList.name}</span><p>${tempList.details}</p><div class="hover-div"><a href="${tempList.link}"<span class="hover-button">View</span></a></div></div>`;
         i++;
     }) 
     hoverDivs = document.querySelectorAll('.hover-div');
