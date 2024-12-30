@@ -106,6 +106,14 @@ const imageLinks = [{
                             language : true, 
                             tool : false
                         }
+                    },
+                    {
+                        name : 'Tailwind CSS', 
+                        src : "../img/tailwind.png", 
+                        type : {
+                            language : true, 
+                            tool : false
+                        }
                     }
 ];
 
