@@ -65,7 +65,6 @@ iframe {
     resize: none;
     border: none;
     filter: blur(1px);
-    border-radius: 20px;
 }
 
 .hover {
