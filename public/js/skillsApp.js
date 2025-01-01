@@ -114,6 +114,14 @@ const imageLinks = [{
                             language : true, 
                             tool : false
                         }
+                    },
+                    {
+                        name : 'React', 
+                        src : "../img/react.png", 
+                        type : {
+                            language : true, 
+                            tool : false
+                        }
                     }
 ];
 
