@@ -96,6 +96,19 @@ const projectList = [{
                             "JavaScript",
                             "Git"
                         ]
+                    },
+                    {
+                        name : "Vijnana 2025",
+                        src : "../img/vijnana25.png",
+                        link : "./projects/vijnana25.html",
+                        order : 6,
+                        details : "Official website of vijnana 2025. Registration and details of the events as part of vijnana are present in this.",
+                        language : [
+                            "HTML",
+                            "CSS",
+                            "JavaScript",
+                            "Git"
+                        ]
                     }
 ];
 
