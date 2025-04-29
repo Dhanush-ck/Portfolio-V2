@@ -109,6 +109,21 @@ const projectList = [{
                             "JavaScript",
                             "Git"
                         ]
+                    },
+                    {
+                        name : "BMI Calculator",
+                        src : "../img/projects/bmi-calculator/1.png",
+                        link : "./projects/bmi-calculator.html",
+                        order : 7,
+                        details : "A simple website for calculating your bmi using height and weight.",
+                        language : [
+                            "React",
+                            "HTML",
+                            "CSS",
+                            "Tailwind CSS",
+                            "JavaScript",
+                            "Git"
+                        ]
                     }
 ];
 
@@ -140,7 +155,7 @@ function sortElements(e) {
     projects.innerHTML = " ";
     var i = 1;
     tempLists.forEach((tempList)=>{
-        projects.innerHTML += `<div class="projects-elements" style="--i:${i}"><img src="${tempList.src}"><span class="project-name">${tempList.name}</span><p>${tempList.details}</p><div class="hover-div"><a href="${tempList.link}"<span class="hover-button">View</span></a></div></div>`;
+        projects.innerHTML += `<div class="projects-elements" style="--i:${i}"><img src="${tempList.src}"><span class="project-name">${tempList.name}</span><p>${tempList.details}</p><a href="${tempList.link}"><div class="hover-div"><span class="hover-button">View</span></div></a></div>`;
         i++;
     }) 
     hoverDivs = document.querySelectorAll('.hover-div');
