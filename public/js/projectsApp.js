@@ -39,10 +39,10 @@ const projectList = [{
                         order : 1,
                         details : "This is my first portfolio website, sharing about my details, skills and contact info. Simple UI and easy to understand.",
                         language : [
-                            "HTML",
                             "CSS",
+                            "Git",
+                            "HTML",
                             "JavaScript",
-                            "Git"
                         ]
                     },
                     {
@@ -52,10 +52,10 @@ const projectList = [{
                         order : 2,
                         details : "It is an image gallery showing images in grid, we can add, remove & replace images. It also contians slideshow feature.",
                         language : [
-                            "HTML",
                             "CSS",
+                            "Git",
+                            "HTML",
                             "JavaScript",
-                            "Git"
                         ]
                     },
                     {
@@ -65,10 +65,10 @@ const projectList = [{
                         order : 3,
                         details : "This is a digital interface for the normal Rock Paper Scissor we use to play with our hands. In this we play with the computer.",
                         language : [
-                            "HTML",
                             "CSS",
+                            "Git",
+                            "HTML",
                             "JavaScript",
-                            "Git"
                         ]
                     },
                     {
@@ -78,10 +78,10 @@ const projectList = [{
                         order : 4,
                         details : "This is XOX or Tic Tac Toe game. It is two player game, played using X and O. Player who get three consecutively.",
                         language : [
-                            "HTML",
                             "CSS",
+                            "Git",
+                            "HTML",
                             "JavaScript",
-                            "Git"
                         ]
                     },
                     {
@@ -91,10 +91,10 @@ const projectList = [{
                         order : 5,
                         details : "My latest portfolio. Contains features that aren't in the first portfolio. It has an attractive and simple UI.",
                         language : [
-                            "HTML",
                             "CSS",
+                            "HTML",
+                            "Git",
                             "JavaScript",
-                            "Git"
                         ]
                     },
                     {
@@ -104,10 +104,10 @@ const projectList = [{
                         order : 6,
                         details : "Official website of vijnana 2025. Registration and details of the events as part of vijnana are present in this.",
                         language : [
-                            "HTML",
                             "CSS",
+                            "Git",
+                            "HTML",
                             "JavaScript",
-                            "Git"
                         ]
                     },
                     {
@@ -117,12 +117,27 @@ const projectList = [{
                         order : 7,
                         details : "A simple website for calculating your bmi using height and weight.",
                         language : [
-                            "React",
-                            "HTML",
                             "CSS",
-                            "Tailwind CSS",
+                            "Git",
+                            "HTML",
                             "JavaScript",
-                            "Git"
+                            "React",
+                            "Tailwind CSS",
+                        ]
+                    },
+                    {
+                        name : "Trivia App",
+                        src : "../img/projects/trivia_app/1.png",
+                        link : "./projects/trivia_app.html",
+                        order : 8,
+                        details : " A simple trivia website where you can answer questions and get your score.",
+                        language : [
+                            "Django",
+                            "CSS",
+                            "Git",
+                            "HTML",
+                            "JavaScript",
+                            "Python",
                         ]
                     }
 ];
