@@ -122,7 +122,23 @@ const imageLinks = [{
                             language : true, 
                             tool : false
                         }
-                    }
+                    },
+                    {
+                        name : 'Django',
+                        src : "../img/django.png",
+                        type : {
+                            language : true,
+                            tool : false
+                        }
+                    },
+                    {
+                        name : 'PHP',
+                        src : "../img/php.png",
+                        type : {
+                            language : true,
+                            tool : false
+                        }
+                    },
 ];
 
 const dropdowns = [selected, listItems[0], listItems[1]];
