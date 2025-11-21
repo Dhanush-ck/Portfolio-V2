@@ -173,22 +173,23 @@ function sortElements(e) {
         projects.innerHTML += `<div class="projects-elements" style="--i:${i}"><img src="${tempList.src}"><span class="project-name">${tempList.name}</span><p>${tempList.details}</p><a href="${tempList.link}"><div class="hover-div"><span class="hover-button">View</span></div></a></div>`;
         i++;
     }) 
+
     hoverDivs = document.querySelectorAll('.hover-div');
+    
+    hoverDivs.forEach((hoverDiv)=>{
+        hoverDiv.addEventListener('mouseover', ()=>{
+            hoverDiv.classList.add('fadeInO9');
+            hoverDiv.classList.remove('fadeOutO9');
+            hoverDiv.classList.add('show-hover');
+        })
+    
+        hoverDiv.addEventListener('mouseout', ()=>{
+            hoverDiv.classList.add('fadeOutO9');
+            hoverDiv.classList.remove('fadeInO9');
+            hoverDiv.addEventListener('fadeOutO9', ()=>{
+                hoverDiv.classList.remove('show-hover');
+            });
+        })
+    })
 }
 sortElements(3);
-
-hoverDivs.forEach((hoverDiv)=>{
-    hoverDiv.addEventListener('mouseover', ()=>{
-        hoverDiv.classList.add('fadeInO9');
-        hoverDiv.classList.remove('fadeOutO9');
-        hoverDiv.classList.add('show-hover');
-    })
-
-    hoverDiv.addEventListener('mouseout', ()=>{
-        hoverDiv.classList.add('fadeOutO9');
-        hoverDiv.classList.remove('fadeInO9');
-        hoverDiv.addEventListener('fadeOutO9', ()=>{
-            hoverDiv.classList.remove('show-hover');
-        });
-    })
-})
