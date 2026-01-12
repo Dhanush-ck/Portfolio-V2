@@ -1,5 +1,5 @@
 const skillText = document.querySelector('.skill');
-const skillInfo = ["Web Developer", "Editor"];
+const skillInfo = ["Full Stack Developer", "Editor"];
 var i = 0;
 var time = 5000;
 
