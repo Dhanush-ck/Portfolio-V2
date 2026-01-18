@@ -139,6 +139,19 @@ const projectList = [{
                             "JavaScript",
                             "Python",
                         ]
+                    },
+                    {
+                        name : "Vijñäna 2026",
+                        src : "../img/projects/vijnana26/1.png",
+                        link : "./projects/vijnana26.html",
+                        order : 9,
+                        details : "Official website of Vijñäna 2026. Registration and details of the events as part of Vijñäna are present in this.",
+                        language : [
+                            "CSS",
+                            "Git",
+                            "HTML",
+                            "JavaScript",
+                        ]
                     }
 ];
 
