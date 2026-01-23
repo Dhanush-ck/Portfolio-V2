@@ -152,7 +152,21 @@ const projectList = [{
                             "HTML",
                             "JavaScript",
                         ]
-                    }
+                    },
+                    {
+                        name : "Treasure Hunt",
+                        src : "../img/projects/treasure-hunt/1.jpg",
+                        link : "./projects/treasure-hunt.html",
+                        order : 10,
+                        details : "Website for conducting treasure hunt as part of Vijñäna 2026",
+                        language : [
+                            "CSS",
+                            "Firebase",
+                            "Git",
+                            "HTML",
+                            "JavaScript",
+                        ]
+                    },
 ];
 
 const tempLists = projectList;
