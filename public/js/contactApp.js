@@ -1,85 +1,61 @@
-const linkedin = document.querySelectorAll('.linkedin-icon');
-const instagram = document.querySelectorAll('.instagram-icon');
-const github = document.querySelectorAll('.github-icon');
+/* =========================================================
+   CONTACT PAGE JS
+   1) Mouse-follow spotlight inside each contact card
+   2) Scroll-reveal for cards / sections
+   ========================================================= */
 
-const navigationPanel = document.querySelector('.navigation-panel');
-const messageContainer = document.querySelector('.message-container');
-const messageIcon = document.getElementById('message-icon');
-const messageIconb = document.getElementById('message-iconb');
-const linkText = document.getElementById('link-src');
-const visit = document.getElementById('visit');
-const copy = document.getElementById('copy');
-const cross = document.getElementById('cross');
+document.addEventListener("DOMContentLoaded", () => {
 
-const copyInfoContainer = document.querySelector('.copy-info-container');
+    const prefersReducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    ).matches;
 
-const containerElements = document.querySelector('.container-elements');
+    /* ---------- Mouse-follow spotlight ---------- */
 
-const buttons = [linkedin[0], linkedin[1], instagram[0], instagram[1], github[0], github[1]];
-const links = {
-    LinkedIn: 'https://www.linkedin.com/in/dhanush-ck',
-    Instagram: 'https://www.instagram.com/_dhanush._.ck/?idsh=MXJjeDByMjBONDc3aQ%3D%3D',
-    GitHub: 'https://github.com/Dhanush-ck'
-}
+    const cards = document.querySelectorAll(".contact-card");
 
-const imageSrc = {
-    LinkedIn : {
-        white : "../img/linkedin-white.png",
-        dark : "../img/linkedin-black.png"
-    },
-    Instagram : {
-        white : "../img/instagram-white.png",
-        dark : "../img/instagram-black.png"
-    },
-    GitHub : {
-        white : "../img/github-white.png",
-        dark : "../img/github-black.png"
+    cards.forEach((card) => {
+        card.addEventListener("mousemove", (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = ((e.clientX - rect.left) / rect.width) * 100;
+            const y = ((e.clientY - rect.top) / rect.height) * 100;
+            card.style.setProperty("--mx", `${x}%`);
+            card.style.setProperty("--my", `${y}%`);
+        });
+    });
+
+    /* ---------- Scroll reveal ---------- */
+
+    const revealEls = document.querySelectorAll(".reveal");
+
+    if (prefersReducedMotion) {
+        revealEls.forEach((el) => el.classList.add("in-view"));
+        return;
     }
-}
 
-buttons.forEach(button => {
-    button.onclick = ()=> {
-        // containerElements.style.display = 'none';
-        containerElements.style.filter = 'blur(10px)';
-        navigationPanel.style.filter = 'blur(10px)';
-        messageContainer.style.display = 'flex';
-        const currentName = button.alt;
-        messageIcon.src = imageSrc[currentName].white;
-        messageIconb.src = imageSrc[currentName].dark;
-        linkText.value = links[currentName];
-        visit.parentElement.href = links[currentName];
-    }
-})
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry, i) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add("in-view");
+                    }, i * 70);
 
-copy.onclick = ()=> {
-    linkText.select();
-    document.execCommand('copy');
-    showCopyMessage();
-}
-
-function showCopyMessage() {
-    copyInfoContainer.style.display = 'flex';
-    copyInfoContainer.classList.add('fadeIn');
-    setTimeout(hideCopyMessage, 1500);
-}
-
-function hideCopyMessage() {
-    copyInfoContainer.classList.remove('fadeIn');
-    copyInfoContainer.classList.add('fadeOut');
-    copyInfoContainer.addEventListener('animationend', ()=> {
-        copyInfoContainer.style.display = 'none';
-        copyInfoContainer.classList.remove('fadeOut')
-    },
-    {once: true});
-}
-
-cross.onclick = ()=> {
-    const filterInfos = [containerElements.style.filter, navigationPanel.style.filter];
-    filterInfos.forEach(filterInfo=> {
-        if(filterInfo == 'blur(10px)'){
-            containerElements.style.filter = 'none';
-            navigationPanel.style.filter = 'none';
-            messageContainer.style.display = 'none';
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        {
+            threshold: 0.15,
+            rootMargin: "0px 0px -40px 0px",
         }
-    })
-}
+    );
+
+    revealEls.forEach((el) => observer.observe(el));
+
+});
+
+const navEl = document.querySelector('.top-nav');
+window.addEventListener('scroll', ()=>{
+    navEl.classList.toggle('scrolled', window.scrollY > 20);
+});
