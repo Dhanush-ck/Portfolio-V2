@@ -3,106 +3,268 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="../img/title-icon.png" type="image/x-icon">
-    <title>Dhanush CK - Portfolio</title>
+
+    <title>About — Dhanush | Full Stack Developer</title>
+    <meta name="description" content="Learn more about Dhanush — a full stack developer passionate about building modern web applications, clean interfaces, and meaningful digital experiences.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+
     <link rel="stylesheet" href="../css/aboutStyle.css">
+    <link rel="stylesheet" href="../css/global.css">
 </head>
 <body>
-    <div class="container">
-        <div class="navigation-panel slideDown">
-            <a href="./menu.html">
-                <img src="../img/menu-white.png" id="menu">
-                <img src="../img/menu-black.png" id="menu-black">
-            </a>
-            <div class="nav-text">
-                <h4>About</h4>
+
+    <!-- ---------------- BACKGROUND EFFECT ---------------- -->
+    <div class="grain" aria-hidden="true"></div>
+    <div class="grid-texture" aria-hidden="true"></div>
+    <div class="glow-mid" aria-hidden="true"></div>
+
+    <!-- ---------------- NAVIGATION ---------------- -->
+    <header class="top-nav slide-down">
+            <div class="nav-container">
+                <a href="../index.html" class="home-btn" aria-label="Go to Home page">
+                    <i class="bi bi-house home"></i>
+                </a>
+                <span class="nav-title">ABOUT</span>
+                <div class="nav-spacer"></div> 
             </div>
-        </div>
-        <div class="container-elements">
-            <div class="first-block">
-                <div class="about-me animationIn" style="--i:1">
-                    <img src="../img/my-pic-icon.png" alt="my-pic" class="rotate90">
-                    <h2 class="slideLeft">About Me</h2>
-                    <p class="slideLeft">I'm a BCA student with immense interest in tech. I know few programming languages and some skills, <a href="./skills.html">get more info about my skills here.</a> Debugging always excites me. Every new bug is a new lesson for me. 
-                    Now i have some experience in web development. I'll casually increase my experience in other development fields and field that excites me. 
+    </header>
+
+    <main>
+
+        <!-- ---------------- ABOUT ME ---------------- -->
+        <section class="section container" aria-labelledby="about-heading">
+            <div class="about-grid">
+
+                <div class="glass-card about-photo-card slide-right">
+                    <img src="../img/my-picture.png" alt="Portrait photo of Dhanush">
+                </div>
+
+                <div class="about-copy slide-left">
+                    <span class="eyebrow">Get to know me</span>
+                    <h2 id="about-heading">Hello, I'm <span>Dhanush C K</span></h2>
+                    <p>
+                        I'm a full stack developer who loves turning ideas into fast, functional,
+                        and visually engaging digital products. I enjoy working across the stack —
+                        from crafting intuitive interfaces to building the logic that powers them —
+                        and I'm always exploring new tools, frameworks, and ideas in AI and web development.
                     </p>
-                </div>
-                <div class="details animationIn" style="--i:2">
-                    <h2>Details</h2>
-                    <div class="details-content">
-                        <span class="left" style="--i:1">Name</span>  <span class="mid" style="--i:2">-</span>  <span class="right" style="--i:3">Dhanush CK</span>
-                        <span class="left" style="--i:4">Education</span> <span class="mid" style="--i:5">-</span>  <span class="right" style="--i:6">BCA</span>
-                        <span class="left" style="--i:7">Skills</span>    <span class="mid" style="--i:8">-</span>  <span class="right" style="--i:9"><a href="./skills.html">Click Here</a></span>
-                        <span class="left" style="--i:10">Place</span> <span class="mid" style="--i:11">-</span>  <span class="right" style="--i:12">Kerala, India</span>
-                        <span class="left" style="--i:13">Projects</span>  <span class="mid" style="--i:14">-</span>    <span class="right" style="--i:15"><a href="./projects.html">Click Here</a></span>
-                        <span class="left" style="--i:16">Interests</span> <span class="mid" style="--i:17">-</span>  <span class="right" style="--i:18">Coding , Debbugging , Editing , Art</span>
-                        <span class="left" style="--i:19">Languages</span> <span class="mid" style="--i:20">-</span>  <span class="right" style="--i:21">English , Malayalam , Hindi</span>
-                        <span class="left" style="--i:22">Availability</span> <span class="mid" style="--i:23">-</span>  <span class="right" style="--i:24">Open to freelance and internships</span>
-                        <span class="left" style="--i:25">Contact</span>  <span class="mid" style="--i:26">-</span>    <span class="right" style="--i:27"><a href="./contact.html">Click Here</a></span>
-                    </div>
-                    <!-- <a href="" >Download Resume</a> -->
-                </div>
-            </div>
-            <div class="second-block">
-                <div class="education animationIn" style="--i:3">
-                    <h2>Education</h2>
-                    <div class="education-contents">
-                        <table>
-                            <tr>
-                                <td>
-                                    <div class="degree">
-                                        <h3>Bachelor of Computer Application</h3>
-                                        <p>Kodiyeri Balakrishnan Smaraka Government College Thalassery, Affiliated Under Kannur University</p>
-                                        <p class="year">2023 - Till Now</p>
-                                        <p class="status">Ongoing</p>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="hse">
-                                        <h3>Higher Secondary Education</h3>
-                                        <p>Mattanur Higher Secondary School, Kannur, Kerala</p>
-                                        <p class="year">2021 - 2023</p>
-                                        <p class="status">Completed</p>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="sslc">
-                                        <h3>Secondary Education</h3>
-                                        <p>Mattanur Higher Secondary School, Kannur, Kerala</p>
-                                        <p class="year">2021</p>
-                                        <p class="status">Completed</p>
-                                    </div>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-                
-                <div class="experience animationIn" style="--i:4">
-                    <h2>Experience</h2>
-                    <div class="experience-contents">
-                        <table>
-                            <tr>
-                                <td>
-                                    <div class="experience1">
-                                        <h3>Frontend internship</h3>
-                                        <p>Remote frontend intership at CODEXINTERN. It helped to achieve experience on React and Tailwind css. Internship was task based having 3 stages with corresponding tasks and duration was one month. </p>
-                                        <p class="year">Dec 2024</p>
-                                        <!-- <p class="year">2 - 27</p> -->
-                                        <p class="status">Completed</p>
-                                    </div>
-                                </td>
-                            </tr>
-                        </table>
+
+                    <div class="btn-row">
+                        <a href="#" class="btn btn-primary">Download Resume</a>
+                        <a href="./contact.html" class="btn btn-secondary">Contact Me</a>
                     </div>
                 </div>
 
             </div>
-        </div>
-    </div>
+        </section>
+
+        <!-- ---------------- PERSONAL DETAILS ---------------- -->
+        <section id="details" class="section container reveal fade-up">
+            <h2 class="section-heading reveal" id="details-heading">Personal Details</h2>
+            <p class="section-sub reveal">A quick snapshot of who I am and where I'm based.</p>
+            <div class="details-grid">
+                <div class="glass-card detail-card reveal">
+                    <span class="detail-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6"/></svg>
+                    </span>
+                    <div>
+                        <span class="detail-label">Name</span>
+                        <span class="detail-value">Dhanush C K</span>
+                    </div>
+                </div>
+                <div class="glass-card detail-card reveal">
+                    <span class="detail-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg>
+                    </span>
+                    <div>
+                        <span class="detail-label">Education</span>
+                        <span class="detail-value">BCA</span>
+                    </div>
+                </div>
+                <div class="glass-card detail-card reveal">
+                    <span class="detail-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-7.5 7-12a7 7 0 10-14 0c0 4.5 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+                    </span>
+                    <div>
+                        <span class="detail-label">Location</span>
+                        <span class="detail-value">Kerala, India</span>
+                    </div>
+                </div>
+                <div class="glass-card detail-card reveal">
+                    <span class="detail-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22V3"/><path d="M4 4h13l-2 4 2 4H4"/></svg>
+                    </span>
+                    <div>
+                        <span class="detail-label">Nationality</span>
+                        <span class="detail-value">Indian</span>
+                    </div>
+                </div>
+                <div class="glass-card detail-card reveal">
+                    <span class="detail-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 3 2.5 15 0 18M12 3c-2.5 3-2.5 15 0 18"/></svg>
+                    </span>
+                    <div>
+                        <span class="detail-label">Languages</span>
+                        <span class="detail-value">English, Malayalam, Hindi</span>
+                    </div>
+                </div>
+                <!-- <div class="glass-card detail-card reveal">
+                    <span class="detail-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+                    </span>
+                    <div>
+                        <span class="detail-label">Email</span>
+                        <span class="detail-value">hello@example.com</span>
+                    </div>
+                </div> -->
+                <div class="glass-card detail-card reveal">
+                    <span class="detail-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-9.5-9C.5 8 2 4.5 5.5 4c2-.2 3.7 1 4.5 2.5C10.8 5 12.5 3.8 14.5 4c3.5.5 5 4 3 8-2.5 4.5-9.5 9-9.5 9z"/></svg>
+                    </span>
+                    <div>
+                        <span class="detail-label">Interests</span>
+                        <span class="detail-value">Coding, Drawing</span>
+                    </div>
+                </div>
+                <div class="glass-card detail-card reveal">
+                    <span class="detail-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+                    </span>
+                    <div>
+                        <span class="detail-label">Availability</span>
+                        <span class="detail-value">Freelance, Part-Time</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ---------------- EDUCATION TIMELINE ---------------- -->
+        <section class="section container" aria-labelledby="education-heading">
+            <h2 class="section-heading reveal" id="education-heading">Education</h2>
+            <p class="section-sub reveal">My academic journey so far.</p>
+
+            <div class="timeline">
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="glass-card timeline-content">
+                        <h3>Bachelor of Computer Applications - BCA</h3>
+                        <span class="timeline-date">2023 - 2026</span>
+                        <!-- <p>Focusing on advanced programming, data structures, and software engineering methodologies.</p> -->
+                        <p>
+                            Kodiyeri Balakrishnan Smaraka Government College, Thalassery<br>
+                            Affiliated Under Kannur University 
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="glass-card timeline-content">
+                        <h3>Higher Secondary - Computer Science</h3>
+                        <span class="timeline-date">2021 - 2023</span>
+                        <!-- <p>Computer Science and Mathematics core, building a strong foundational knowledge.</p> -->
+                        <p>
+                            Mattanur Higher Secondary School <br>
+                            Kannur, Kerala
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="glass-card timeline-content">
+                        <h3>Secondary School - SSLC</h3>
+                        <span class="timeline-date">2020 - 2021</span>
+                        <!-- <p>General studies with an early focus and interest in technology and computers.</p> -->
+                        <p>
+                            Mattanur Higher Secondary School <br>
+                            Kannur, Kerala
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ---------------- EXPERIENCE ---------------- -->
+        <section class="section container" aria-labelledby="experience-heading">
+            <h2 class="section-heading reveal" id="experience-heading">Experience</h2>
+            <p class="section-sub reveal">Where I've focused my time and energy.</p>
+
+            <div class="experience-grid">
+                <div class="glass-card experience-card hover-lift reveal">
+                    <div class="card-icon"><i class="fa-solid fa-laptop-code"></i></div>
+                    <h3>Web Development</h3>
+                    <p>Building responsive, performant, and scalable web applications using modern web technologies.</p>
+                </div>
+                <div class="glass-card experience-card hover-lift reveal">
+                    <div class="card-icon"><i class="fa-solid fa-pen-nib"></i></div>
+                    <h3>UI Design</h3>
+                    <p>Designing clean, user-centric, and modern interfaces that prioritize user experience.</p>
+                </div>
+                <div class="glass-card experience-card hover-lift reveal">
+                    <div class="card-icon"><i class="fa-solid fa-building-columns"></i></div>
+                    <h3>Campus Experience</h3>
+                    <p>Developed technical fest platforms, maintained official college websites, and other real-world web solutions for campus events.</p>
+                </div>
+                <div class="glass-card experience-card hover-lift reveal">
+                    <div class="card-icon"><i class="fa-solid fa-rocket"></i></div>
+                    <h3>Personal Projects</h3>
+                    <p>Developing practical software projects to continuously learn and implement new technical skills.</p>
+                </div>
+                <a href="">
+                    <div class="glass-card experience-card hover-lift reveal clickable-card">
+                        <div class="card-icon">
+                            <i class="fa-solid fa-briefcase"></i>
+                        </div>
+                        <h3>Professional Experience</h3>
+                        <p>Discover internships, professional roles, freelance work, and practical industry experience through a detailed timeline.</p>
+                        <div class="card-action">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- ---------------- INTERESTS ---------------- -->
+        <section class="section container" aria-labelledby="interests-heading">
+            <h2 class="section-heading reveal" id="interests-heading">Interests</h2>
+            <p class="section-sub reveal">Technologies and topics I enjoy working with.</p>
+
+            <div class="chip-row reveal">
+                <span class="chip">Django</span>
+                <span class="chip">Python</span>
+                <span class="chip">JavaScript</span>
+                <span class="chip">Full Stack</span>
+                <span class="chip">Artificial Intelligence</span>
+                <span class="chip">Debugging</span>
+                <span class="chip">UI Design</span>
+                <span class="chip">Problem Solving</span>
+                <span class="chip">Video Editing</span>
+                <span class="chip">Photo Editing</span>
+                <span class="chip">Drawing</span>
+                <span class="chip">Gaming</span>
+            </div>
+        </section>
+
+        <!-- ---------------- FOOTER CTA ---------------- -->
+        <section class="section container">
+            <div class="glass-card cta-card reveal">
+                <h2>Interested in working together?</h2>
+                <a href="./contact.html" class="btn btn-primary">Let's Connect</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer container">
+        <p>&copy; 2026 Dhanush. All rights reserved.</p>
+    </footer>
+
+    <script src="../js/about.js"></script>
 </body>
 </html>
