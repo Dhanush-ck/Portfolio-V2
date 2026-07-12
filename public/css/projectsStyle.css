@@ -15,41 +15,111 @@
 }
 
 ::-webkit-scrollbar-track {
-    background: #1f1f1f;
+    background:#101010;
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #1f1f1f;
     border-radius: 20px;
     border: 3px solid #bbb;
+
+    background:var(--primary);
+    border-radius:999px;
+}
+
+.container::before{
+    content:"";
+    position:fixed;
+    width:500px;
+    height:500px;
+    background:#8B5CF620;
+    /* background:#8b5cf630; */
+    border-radius:50%;
+    filter:blur(170px);
+    top:-180px;
+    left:-180px;
+    z-index:1;
+}
+
+.container::after{
+    content:"";
+    position:fixed;
+    width:500px;
+    height:500px;
+    /* background:#C084FC15; */
+    background:#6d28d950;
+    background:#8B5CF620;
+    border-radius:50%;
+    filter:blur(170px);
+    bottom:-20px;
+    right:-10px;
+    z-index: 0;
+}
+
+button,
+img,
+.projects-elements,
+.selected,
+.dropdown-list li{
+
+    transition:.35s;
+
 }
 
 .container{
     height: 100vh;
     width: 100vw;
-    background-color: #1f1f1f;
     color: white;
     display: grid;
     grid-template-rows: auto 1fr;
+
+    background:
+    radial-gradient(circle at top left,
+    rgba(139,92,246,.12),
+    transparent 35%),
+
+    radial-gradient(circle at bottom right,
+    rgba(192,132,252,.08),
+    transparent 35%),
+
+    var(--bg);
+
+    /* fix: fixed-size pseudo-element blobs can force horizontal
+       scroll on very narrow viewports */
+    overflow-x: hidden;
 }
 
 .navigation-panel {
-    background-color: #1f1f1f;
     padding: 20px;
     display: grid;
     grid-template-columns: auto 1fr;
     opacity: 0;
+    
+    backdrop-filter:blur(20px);
+    /* border-bottom:1px solid var(--border);  */
+    background-color: transparent;
+    position:sticky; 
+    top:0;
+    z-index:100;
+
 }
 
-#menu {
-    height: 30px;
-    width: 30px;
+.home-btn {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    transition: var(--transition-smooth);
+    color: var(--text-muted);
 }
 
-#menu-black {
-    height: 30px;
-    width: 30px;
-    display: none;
+.home-btn:hover {
+    color: var(--primary);
+    border-color: var(--primary);
+    box-shadow: 0 0 15px var(--glass-glow);
 }
 
 .nav-text {
@@ -59,9 +129,12 @@
     color: white;
 }
 
-.nav-text h4 {
-    font-size: 30px;
-    letter-spacing: 5px;
+.nav-text span {
+    letter-spacing: 2px;
+    font-size: 1rem;
+    font-family:"JetBrains Mono",monospace;
+    color:var(--mist);
+    display: block;
 }
 
 .container-elements {
@@ -70,6 +143,7 @@
     overflow-y: hidden;
     height: 100%;
     width: 100%;
+    background: transparent;
 }
 
 .dropdown {
@@ -91,12 +165,22 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #1f1f1f;
+    /* background-color: #1f1f1f; */
     border: 1px solid rgb(255, 255, 255, 0.2);
     animation: fadeIn 1.5s ease forwards;
+
+    background:rgba(255,255,255,.05);
+    backdrop-filter:blur(15px);
+    border:1px solid var(--border);
+    border-radius:14px;
+    transition:.35s;
+    margin: 5px 0 5px 0;
 }
 
 .selected:hover{
+
+    border-color:var(--primary);
+    box-shadow: 0 0 20px rgba(139,92,246,.2);
     .arrow {
         filter: drop-shadow(0 0 5px rgba(255, 255, 255, 1));
     }
@@ -106,7 +190,7 @@
 }
 
 .dropdown-list {
-    background-color: #1f1f1f;
+    /* background-color: #1f1f1f; */
     position: absolute;
     top: 100%;
     right: 0;
@@ -115,6 +199,11 @@
     display: none;
     animation: fadeIn 0.5s ease forwards;
     opacity: 0;
+
+    background:#15151E;
+    border-radius:14px;
+    overflow:hidden;
+    border:1px solid var(--border);
 }
 
 .dropdown-list li {
@@ -125,10 +214,15 @@
     cursor: pointer;
     transition: background-color 0.2s ease;
     border: 1px solid rgb(255, 255, 255, 0.2);
+
+    transition:.3s;
 }
 
 .dropdown-list li:hover {
-    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 1));
+    filter: drop-shadow(0 0 5px rgba(139,92,246, 1));
+
+    background:var(--primary);
+    color:white;
 }
 
 .show {
@@ -137,16 +231,31 @@
 
 .projects {
     overflow-y: auto;
+    /* fix: prevents horizontal scrollbar - the x overflow was caused
+       by minmax()'s min bound forcing columns wider than the
+       viewport on small screens */
+    overflow-x: hidden;
     /* max-height: calc(100vh - 100px); */
     display:  grid;
-    grid-template-columns:  repeat(auto-fit, minmax(350px, 1fr));
-    gap: 10px;
-    margin: 10px;
+    /* fix: min() caps the column's minimum width at 100% of the
+       available space, so it can never exceed the container and
+       force an x-scroll, regardless of screen size. This makes the
+       width-specific grid-template-columns overrides in the media
+       queries below redundant, but they're harmless left in place. */
+    grid-template-columns: repeat(auto-fit, minmax(min(350px, 100%), 1fr));
+    /* gap: 10px; */
+    /* margin: 10px; */
+
+    gap:28px;
+    padding:25px;
+    margin:0;
+    z-index: 1;
+    background: transparent;
 }
 
 .projects-elements {
     margin: 10px;
-    background-color: #282828;
+    /* background-color: #282828; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -157,23 +266,66 @@
     opacity: 0;
     animation: scaleUpXY 1s ease forwards;
     animation-delay: calc(0.2s * var(--i));
+
+    background:rgba(255,255,255,.04);
+    border:1px solid var(--border);
+    backdrop-filter:blur(18px);
+    border-radius:24px;
+    /* overflow:hidden; */
+    transition:
+        transform .35s,
+        box-shadow .35s,
+        border-color .35s;
+}
+
+.projects-elements:hover{
+
+    transform: translateZ(-10px);
+    border-color:var(--primary);
+    box-shadow: 0 20px 45px rgba(139,92,246,.18);
+
+}
+
+.reveal {
+    animation: none;
+    animation-delay: 0.2s;
+    opacity: 0;
+}
+
+.reveal-delay {
+    animation: scaleUpXY 1s ease forwards;
+    animation-delay: calc(0.2s * var(--i));
+}
+
+.in-view {
+    animation: scaleUpXY 1s ease forwards;
 }
 
 .projects-elements img {
     width: 100%;
     margin: 10px;
     border-radius: 10px;
+
+    margin:0;
+    transition:.5s;
 }
 
 .project-name {
-    font-size: 20px;
-    margin: 10px;
+    /* font-size: 20px; */
+    /* margin: 10px; */
+
+    font-size:22px;
+    font-weight:700;
+    margin-top:18px;
 }
 
 .projects-elements p {
     font-weight: 200;
     margin: 10px;
-    line-height: 20px;
+    /* line-height: 20px; */
+
+    color:var(--text2);
+    line-height:1.8;
 }
 
 .hover-div {
@@ -188,6 +340,15 @@
     opacity: 0;
     background-color: #222;
     border-radius: 20px;
+
+    background:
+    linear-gradient(
+    180deg,
+    rgba(8,8,10,.2),
+    rgba(8,8,10,.88)
+    );
+    backdrop-filter:blur(6px);
+    transition:.35s;
 }
 
 .hover-div a {
@@ -205,6 +366,23 @@
     border-radius: 10px;
     padding: 10px;
     cursor: pointer;
+
+    background:var(--primary);
+    color:white;
+    border-radius:999px;
+    /* width:150px;
+    height:48px; */
+    font-weight:600;
+    transition:.35s;
+    z-index: 2;
+}
+
+.hover-button:hover{
+    background:var(--primary-light);
+    transform:translateY(-3px);
+    box-shadow:
+        0 0 25px
+        rgba(139,92,246,.45);
 }
 
 .show-hover {
@@ -255,27 +433,9 @@
     }
 }
 
-@keyframes fadeIn9 {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 0.9;
-    }
-}
-
 @keyframes fadeOut {
     0% {
         opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
-}
-
-@keyframes fadeOut9 {
-    0% {
-        opacity: 0.9;
     }
     100% {
         opacity: 0;
@@ -297,191 +457,23 @@
     }
 }
 
-@media (prefers-color-scheme: light) {
-    ::-webkit-scrollbar-track {
-        background: #ddd;
-    }
-    
-    ::-webkit-scrollbar-thumb {
-        background-color: #ddd;
-        border-radius: 20px;
-        border: 3px solid #555;
-    }
+/* =========================================================
+   RESPONSIVE BREAKPOINTS
+   Fixed: ranges now use consecutive, non-overlapping bounds
+   (e.g. 399px / 400px instead of 400px / 400px on both sides)
+   so a viewport at an exact boundary pixel only ever matches
+   one rule instead of two.
+   ========================================================= */
+/* =========================================================
+   RESPONSIVE BREAKPOINTS
+   Rebuilt using max-width only (desktop-first, cascading).
+   Each rule only overrides what changes at that size, so
+   there's no overlap and no fighting between rules.
+   ========================================================= */
 
-    .container {
-        color: black;
-        background-color: #efefef;
-    }
 
-    .navigation-panel {
-        background-color: #efefef;
-    }
-
-    #menu {
-        display: none;
-    }
-
-    #menu-black {
-        display: block;
-    }
-
-    .nav-text {
-        color: black;
-    }
-
-    .selected {
-        background-color: #efefef;
-        border: 1px solid rgba(0, 0, 0, 0.4);
-    }
-
-    .selected:hover {
-        .arrow {
-            filter: drop-shadow(0 0 3px rgba(0, 0, 0, 1));
-        } 
-        .order {
-            filter: drop-shadow(0 0 3px rgba(0, 0, 0, 1));
-        }
-    }
-
-    .dropdown-list {
-        background-color: #efefef;
-    }
-    
-    .dropdown-list li {
-        border: 1px solid rgba(0, 0, 0, 0.4);
-    }
-
-    .dropdown-list li:hover {
-        filter: drop-shadow(0 0 3px rgba(0, 0, 0, 1));
-    }
-
-    .projects-elements {
-        background-color: #e0e0e0;
-    }
-
-    .hover-div {
-        background-color: #bbb;
-    }
-
-    .hover-button {
-        background-color: black;
-        color: white;
-    }
-
-    @keyframes fadeIn9 {
-        from {
-            opacity: 0;
-        }
-        to {
-            opacity: 0.8;
-        }
-    }
-}
-
-@media only screen and (min-width: 300px) and (max-width: 400px) {
-
-    #menu, #menu-black {
-        height: 20px;
-        width: 20px;
-    }
-
-    .nav-text h4 {
-        font-size: 20px;
-    }
-
-    .container-elements {
-        font-size: 12px;
-    }
-
-    .projects {
-    grid-template-columns:  repeat(auto-fit, minmax(300px, 1fr));
-    }
-
-    .projects-elements p {
-        font-size: 14px;
-    }
-
-    :not(.projects-elements:nth-child(1), .projects-elements:nth-child(2)) {
-        animation-timeline: view();
-        animation-range: entry 0% cover 30%;
-    }
-}
-
-@media only screen and (min-width: 400px) and (max-width: 600px) {
-
-    #menu {
-        height: 25px;
-        width: 25px;
-    }
-
-    #menu-black {
-        height: 25px;
-        width: 25px;
-    }
-
-    .nav-text h4 {
-        font-size: 25px;
-    }
-
-    .projects-elements p {
-        font-size: 14px;
-    }
-
-    :not(.projects-elements:nth-child(1), .projects-elements:nth-child(2)) {
-        animation-timeline: view();
-        animation-range: entry 0% cover 30%;
-    }
-
-}
-
-@media only screen and (min-width: 600px) and (max-width: 800px) {
-    #menu, #menu-black {
-        width: 35px;
-        height: 35px;
-    }
-
-    .nav-text h4 {
-        font-size: 35px;
-    }
-
-    .container-elements {
-        font-size: 18px;
-    }
-
-    .selected {
-        width: 120px;
-    }
-
-    .dropdown-list li {
-        width: 120px;
-    }
-}
-
-@media only screen and (min-width: 800px) and (max-width: 992px) {
-    #menu, #menu-black {
-        height: 35px;
-        width: 35px;
-    }
-
-    .nav-text h4 {
-        font-size: 35px;
-    }
-
-    .container-elements {
-        font-size: 18px;
-    }
-
-    .selected {
-        width: 120px;
-    }
-
-    .dropdown-list li {
-        width: 120px;
-    }
-}
-
-@media only screen and (min-width: 992px) and (max-width: 1200px) {
-    #menu, #menu-black {
+@media (max-width: 1199px) {
+    #home {
         height: 35px;
         width: 35px;
     }
@@ -510,10 +502,43 @@
         line-height: 24px;
     }
 
+    .projects {
+        margin: 15px;
+    }
 }
 
-@media only screen and (min-width: 992px) and (max-width: 1200px) and (max-height: 600px) {
-    #menu, #menu-black {
+@media (max-width: 991px) {
+    #home {
+        height: 35px;
+        width: 35px;
+    }
+
+    .nav-text h4 {
+        font-size: 35px;
+    }
+
+    .container-elements {
+        font-size: 18px;
+    }
+
+    .selected {
+        width: 120px;
+    }
+
+    .dropdown-list li {
+        width: 120px;
+    }
+}
+
+@media (max-width: 768px)  {
+    .projects-elements:nth-child(n+3) {
+        animation-timeline: view();
+        animation-range: entry 0% cover 30%;
+    }
+}
+
+@media (max-width: 599px) {
+    #home {
         height: 25px;
         width: 25px;
     }
@@ -522,81 +547,45 @@
         font-size: 25px;
     }
 
-    .container-elements {
+    .selected {
+        width: 100px;
+    }
+
+    .dropdown-list li {
+        width: 100px;
+    }
+
+    .projects-elements p {
         font-size: 14px;
     }
-
-    .projects {
-        margin: 15px;
-    }
-
 }
 
-@media only screen and (min-width: 1200px) {
-    .projects {
-        margin: 20px;
-    }
-}
-
-@media only screen and (max-width: 200px) and (max-height: 300px) {
-    #menu, #menu-black {
-        height: 10px;
-        width: 10px;
+@media (max-width: 399px) {
+    #home {
+        height: 20px;
+        width: 20px;
     }
 
     .nav-text h4 {
-        font-size: 10px;
-        margin: 0 0 0 5px;
+        font-size: 20px;
     }
 
-    .selected {
-        width: 24px;
-        height: 5px;
-        font-size: 5px ;
-        padding: 5px;
+    .container-elements {
+        font-size: 12px;
     }
 
     .projects {
-        margin: 5px;
-        width: 100vw;
-        overflow-x: hidden;
-    }
-
-    .projects-elements {
-        margin: 5px;
-        padding: 5px;
-        width: 80vw;
-        height: auto;
-    }
-
-    .projects-elements img {
-        width: 100%;
-        margin: 2px;
+        grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+        margin: 10px;
     }
 
     .projects-elements p {
-        line-height: 10px;
-        font-size: 5px;
-        margin: 5px;
-    }
-
-    .project-name {
-        font-size: 10px;
-        margin: 5px;
+        font-size: 14px;
     }
 }
 
-@media only screen and (max-height: 400px) and (max-width:300px) and (min-width: 200px) and (min-height: 300px) {
-
-    .container {
-        width: 100vw;
-    }
-    
-    .container-elements {
-        width: 100%;
-    }
-
-    #menu, #menu-black {
+@media (max-width: 300px) {
+    #home {
         height: 15px;
         width: 15px;
     }
@@ -607,73 +596,27 @@
 
     .selected {
         width: 24px;
-        height: 5px;
-        font-size: 5px ;
+        height: auto;
+        font-size: 8px;
         padding: 5px;
     }
 
-    .projects {
-        margin: 5px;
-        overflow-x: hidden;
-    }
-
-    .projects-elements {
-        margin: 5px;
-        padding: 5px;
-        width: 100%;
-    }
-
-    .projects-elements img {
-        width: 100%;
-        margin: 2px;
-    }
-
-    .projects-elements p {
-        line-height: 10px;
-        font-size: 5px;
-        margin: 5px;
-    }
-
-    .project-name {
-        font-size: 10px;
-        margin: 5px;
-    }
-}
-
-@media only screen and (min-height: 200px) and (max-height: 300px) and (max-width: 300px) and (min-width: 200px) {
-    .container {
-        width: 100vw;
-    }
-    
-    .container-elements {
-        width: 100%;
-    }
-
-    #menu, #menu-black {
-        height: 15px;
-        width: 15px;
-    }
-
-    .nav-text h4 {
-        font-size: 15px;
-    }
-
-    .selected {
+    .dropdown-list li {
         width: 24px;
-        height: 5px;
-        font-size: 5px ;
+        font-size: 8px;
         padding: 5px;
     }
 
     .projects {
         margin: 5px;
+        width: 100%;
         overflow-x: hidden;
     }
 
     .projects-elements {
         margin: 5px;
         padding: 5px;
-        width: 75%;
+        width: 100%;
     }
 
     .projects-elements img {
@@ -682,19 +625,19 @@
     }
 
     .projects-elements p {
-        line-height: 10px;
-        font-size: 5px;
+        line-height: 14px;
+        font-size: 10px;
         margin: 5px;
     }
 
     .project-name {
-        font-size: 10px;
+        font-size: 12px;
         margin: 5px;
     }
 }
 
-@media only screen and (min-width: 200px) and (max-width: 300px) and (min-height: 100px) and (max-height: 200px) {
-    #menu, #menu-black {
+@media (max-width: 199px) {
+    #home {
         height: 10px;
         width: 10px;
     }
@@ -705,38 +648,29 @@
     }
 
     .selected {
-        width: 24px;
-        height: 5px;
-        font-size: 5px ;
-        padding: 5px;
+        width: 20px;
+        font-size: 5px;
+        padding: 3px;
     }
 
-    .projects {
-        margin: 5px;
-        width: 100vw;
-        overflow-x: hidden;
+    .dropdown-list li {
+        width: 20px;
+        font-size: 5px;
+        padding: 3px;
     }
 
     .projects-elements {
-        margin: 5px;
-        padding: 5px;
-        width: 85vw;
-        height: auto;
-    }
-
-    .projects-elements img {
-        width: 100%;
-        margin: 2px;
+        width: 90%;
     }
 
     .projects-elements p {
         line-height: 10px;
         font-size: 5px;
-        margin: 5px;
+        margin: 3px;
     }
 
     .project-name {
         font-size: 10px;
-        margin: 5px;
+        margin: 3px;
     }
 }
