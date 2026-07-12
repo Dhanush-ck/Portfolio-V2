@@ -1,37 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="./img/title-icon.png" type="image/x-icon">
-    <title>Dhanush CK - Portfolio</title>
-    <link rel="stylesheet" href="./css/indexStyle.css">
-</head>
-<body>
-    <div class="container">
-        <div class="navigation-panel slideDown">
-            <a href="./pages/menu.html">
-                <img src="./img/menu-white.png" id="menu">
-                <img src="./img/menu-black.png" id="menu-black">
-            </a>
-            <div class="nav-text">
-                <h4>Home</h4>
-            </div>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Portfolio</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./css/indexStyle.css">
+        <link rel="stylesheet" href="./css/global.css">
+    </head>
+    <body>
+
+        <div class="grain"></div>
+        <div class="overlay" id="overlay"></div>
+
+        <nav id="nav" class="slide-down">
+
+            <div class="logo typing"><span></span></div>
+
+            <ul  class="desktop-nav">
+
+                <li><a href="#">Home</a></li>
+                <li><a href="./pages/projects.html">Projects</a></li>
+                <li><a href="./pages/skills.html">Skills</a></li>
+                <li><a href="./pages/about.html">About</a></li>
+                <li><a href="./pages/contact.html">Contact</a></li>
+
+            </ul>
+
+            <button id="menuBtn" class="menu-btn">
+                ☰
+            </button>
+
+        </nav>
+
+        <div class="mobile-menu" id="mobileMenu">
+
+            <button class="close-btn" id="closeBtn">✕</button>
+
+            <a href="#">Home</a>
+            <a href="./pages/projects.html">Projects</a>
+            <a href="./pages/skills.html">Skills</a>
+            <a href="./pages/about.html">About</a>
+            <a href="./pages/contact.html">Contact</a>
+
         </div>
-        <div class="container-elements">
-            <div class="container-elements-text slideLeft">
-                <span class="im">I'm</span>
-                <span class="name">Dhanush CK</span>
-                <span class="skill"></span>
-                <div class="details-text-container">
-                    <div class="details-text">I'm really into tech and excited to dive deeper into the industry. Debugging and figuring out bugs is something I genuinely enjoy, and I'm looking forward to picking up more programming languages along the way!</div>
+
+        <section class="hero">
+
+            <div class="left">
+
+                <div class="tag reveal" style="animation-delay:.05s">Hello, I'm</div>
+
+                <h1 class="reveal" style="animation-delay:.15s">Dhanush C K</h1>
+
+                <h2 class="reveal" style="animation-delay:.25s"><b>Full Stack Developer</b> · Software Engineer</h2>
+
+                <p class="reveal" style="animation-delay:.35s">
+
+                <!-- I craft modern web experiences with clean code, intuitive design, and innovative technologies. Passionate about building digital products that are fast, scalable, and visually engaging. -->
+
+                I'm really into tech and excited to dive deeper into the industry. Debugging and figuring out bugs is something I genuinely enjoy, and I'm looking forward to picking up more programming languages along the way!
+
+                </p>
+
+                <div class="buttons reveal" style="animation-delay:.45s">
+
+                    <a href="./pages/projects.html" class="btn primary">
+                        View Projects
+                    </a>
+
+                    <a href="./pages/about.html" class="btn secondary">
+                        Know More
+                    </a>
+
                 </div>
+
+                <div class="stats reveal" style="animation-delay:.55s">
+
+                    <div class="stat">
+
+                        <h3>5+</h3>
+                        <span>Projects</span>
+
+                    </div>
+
+                    <div class="stat">
+
+                        <h3>3+</h3>
+                        <span>Years Learning</span>
+
+                    </div>
+
+                    <div class="stat">
+
+                        <h3>15+</h3>
+                        <span>Technologies</span>
+
+                    </div>
+
+                </div>
+
             </div>
-            <div class="container-elements-image">
-                <img src="./img/my-picture.png" id="picture" class="picture slideUp">
+
+            <div class="right scale-up" id="rightStage">
+
+                <canvas id="stage"></canvas>
+
+                <div class="image" id="tiltCard">
+
+                     <img src="./img/main_image.png" alt="">
+
+                </div>
+
+                <div class="card c1">
+
+                    <h4>5+</h4>
+                    <p>Projects</p>
+
+                </div>
+
+                <div class="card c2">
+
+                    <h4>Tech</h4>
+                    <p>Enthusiast</p>
+
+                </div>
+
+                <div class="card c3">
+
+                    <h4>🚀</h4>
+                    <p>Open to Work</p>
+
+                </div>
+
             </div>
-        </div>
-    </div>
-    <script src="./js/indexApp.js"></script>
-</body>
+
+        </section>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+        <script src="./js/indexApp.js"></script>
+    </body>
 </html>
