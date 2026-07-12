@@ -197,7 +197,7 @@ function sortElements(e) {
     projects.innerHTML = " ";
     var i = 1;
     tempLists.forEach((tempList)=>{
-        projects.innerHTML += `<div class="projects-elements" style="--i:${i}"><img src="${tempList.src}"><span class="project-name">${tempList.name}</span><p>${tempList.details}</p><a href="${tempList.link}"><div class="hover-div"><span class="hover-button">View</span></div></a></div>`;
+        projects.innerHTML += `<div class="projects-elements" style="--i:${i}" data-value=${i}><img src="${tempList.src}"><span class="project-name">${tempList.name}</span><p>${tempList.details}</p><a href="${tempList.link}"><div class="hover-div"><span class="hover-button">View</span></div></a></div>`;
         i++;
     }) 
 
@@ -205,18 +205,97 @@ function sortElements(e) {
     
     hoverDivs.forEach((hoverDiv)=>{
         hoverDiv.addEventListener('mouseover', ()=>{
-            hoverDiv.classList.add('fadeInO9');
-            hoverDiv.classList.remove('fadeOutO9');
+            hoverDiv.classList.add('fadeIn');
+            hoverDiv.classList.remove('fadeOut');
             hoverDiv.classList.add('show-hover');
         })
     
         hoverDiv.addEventListener('mouseout', ()=>{
-            hoverDiv.classList.add('fadeOutO9');
-            hoverDiv.classList.remove('fadeInO9');
-            hoverDiv.addEventListener('fadeOutO9', ()=>{
+            hoverDiv.classList.add('fadeOut');
+            hoverDiv.classList.remove('fadeIn');
+            hoverDiv.addEventListener('fadeOut', ()=>{
                 hoverDiv.classList.remove('show-hover');
             });
         })
     })
 }
 sortElements(3);
+
+
+let resizeTimer;
+
+window.addEventListener("resize", () => {
+    // checkMobile();
+    clearTimeout(resizeTimer);
+
+    resizeTimer = setTimeout(() => {
+        location.reload();
+    }, 200); // Reload 300ms after resizing stops
+});
+
+const elements = document.querySelectorAll(".projects-elements");
+
+// function checkMobile() {
+//     if (window.innerWidth <= 768) {
+//         elements.forEach((element, i)=>{
+//             element.classList.add("reveal");
+//         })
+//     } else {
+//         elements.forEach((element)=>{
+//             element.classList.remove("reveal");
+//             element.classList.remove("reveal-delay");
+//         })
+//     }
+// }
+
+// // Run on page load
+// checkMobile();
+
+// document.addEventListener("DOMContentLoaded", () => {
+
+//     const revealEls = document.querySelectorAll(".reveal");
+
+//     const observer = new IntersectionObserver(
+//         (entries) => {
+//             entries.forEach((entry, i) => {
+//                 if (entry.isIntersecting) {
+//                     // small stagger so grouped cards don't all pop at once
+//                     setTimeout(() => {
+//                         const index = entry.target.dataset.value;
+//                         if(window.innerWidth <= 768) {
+//                             if(window.innerHeight >= 1000) {
+//                                 if(index==1 || index==2 || index==3) {
+//                                     entry.target.classList.add("reveal-delay");
+//                                 }
+//                                 else {
+//                                     entry.target.classList.add("in-view");
+//                                 }
+//                             }
+//                             else {
+//                                 if(index==1 || index==2) {
+//                                     entry.target.classList.add("reveal-delay");
+//                                 }
+//                                 else {
+//                                     entry.target.classList.add("in-view");
+//                                 }
+//                             }
+//                         }
+//                     }, i * 80);
+
+//                     observer.unobserve(entry.target);
+//                 }
+//                 else {
+//                     entry.target.classList.remove("reveal-delay");
+//                     entry.target.classList.remove("in-view");
+//                 }
+//             });
+//         },
+//         {
+//             threshold: 0.15,
+//             rootMargin: "0px 0px -40px 0px",
+//         }
+//     );
+
+//     revealEls.forEach((el) => observer.observe(el));
+
+// });
