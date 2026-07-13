@@ -13,7 +13,7 @@ const arrowLeft = document.querySelector('.arrow-left');
 
 const imageLinks = [{
                         name : 'C++', 
-                        src : "../img/c-.png", 
+                        src : "../img/skills/c++.png", 
                         type : {
                             language : true, 
                             tool : false
@@ -21,7 +21,7 @@ const imageLinks = [{
                     },
                     {
                         name: 'C', 
-                        src : "../img/icons8-c-programming-480.png", 
+                        src : "../img/skills/c.png", 
                         type : {
                             language : true, 
                             tool : false
@@ -29,7 +29,7 @@ const imageLinks = [{
                     },
                     {
                         name : 'Python', 
-                        src : "../img/python.png",  
+                        src : "../img/skills/python.png",  
                         type : {
                             language : true, 
                             tool : false
@@ -37,7 +37,7 @@ const imageLinks = [{
                     },
                     {
                         name : 'Java', 
-                        src : "../img/java.png", 
+                        src : "../img/skills/java.png", 
                         type : {
                             language : true, 
                             tool : false
@@ -45,7 +45,7 @@ const imageLinks = [{
                     },
                     {
                         name : 'JavaScript', 
-                        src : "../img/js.png", 
+                        src : "../img/skills/js.png", 
                         type : {
                             language : true, 
                             tool : false
@@ -53,7 +53,7 @@ const imageLinks = [{
                     },
                     {
                         name : 'VS Code', 
-                        src : "../img/icons8-vs-code-512.png", 
+                        src : "../img/skills/vscode.png", 
                         type : {
                             language : false, 
                             tool : true
@@ -61,7 +61,7 @@ const imageLinks = [{
                     }, 
                     {
                         name : 'Git', 
-                        src : "../img/git.png", 
+                        src : "../img/skills/git.png", 
                         type : {
                             language : false, 
                             tool : true
@@ -69,7 +69,7 @@ const imageLinks = [{
                     },
                     {
                         name : 'GitHub', 
-                        src : "../img/github.png", 
+                        src : "../img/skills/github.png", 
                         type : {
                             language : false, 
                             tool : true
@@ -77,7 +77,7 @@ const imageLinks = [{
                     },
                     {
                         name : 'WordPress', 
-                        src : "../img/wordpress.png", 
+                        src : "../img/skills/wordpress.png", 
                         type : {
                             language : false, 
                             tool : true
@@ -85,7 +85,7 @@ const imageLinks = [{
                     },
                     {
                         name : 'HTML', 
-                        src : "../img/html-5.png", 
+                        src : "../img/skills/html-5.png", 
                         type : {
                             language : true, 
                             tool : false
@@ -93,7 +93,7 @@ const imageLinks = [{
                     }, 
                     {
                         name : 'CSS', 
-                        src : "../img/css-3.png", 
+                        src : "../img/skills/css-3.png", 
                         type : {
                             language : true, 
                             tool : false
@@ -101,7 +101,7 @@ const imageLinks = [{
                     },
                     {
                         name : 'SQL', 
-                        src : "../img/mysql.png", 
+                        src : "../img/skills/mysql.png", 
                         type : {
                             language : true, 
                             tool : false
@@ -109,7 +109,7 @@ const imageLinks = [{
                     },
                     {
                         name : 'Tailwind CSS', 
-                        src : "../img/tailwind.png", 
+                        src : "../img/skills/tailwind.png", 
                         type : {
                             language : true, 
                             tool : false
@@ -117,7 +117,7 @@ const imageLinks = [{
                     },
                     {
                         name : 'React', 
-                        src : "../img/react.png", 
+                        src : "../img/skills/react.png", 
                         type : {
                             language : true, 
                             tool : false
@@ -125,7 +125,7 @@ const imageLinks = [{
                     },
                     {
                         name : 'Django',
-                        src : "../img/django.png",
+                        src : "../img/skills/django.png",
                         type : {
                             language : true,
                             tool : false
@@ -133,7 +133,7 @@ const imageLinks = [{
                     },
                     {
                         name : 'PHP',
-                        src : "../img/php.png",
+                        src : "../img/skills/php.png",
                         type : {
                             language : true,
                             tool : false
