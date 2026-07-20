@@ -13,7 +13,7 @@ const arrowLeft = document.querySelector('.arrow-left');
 
 const imageLinks = [{
                         name : 'C++', 
-                        src : "../img/skills/cpp.svg", 
+                        src : "../assets/img/skills/cpp.svg", 
                         type : {
                             language : true, 
                             tool : false
@@ -21,7 +21,7 @@ const imageLinks = [{
                     },
                     {
                         name: 'C', 
-                        src : "../img/skills/c.svg", 
+                        src : "../assets/img/skills/c.svg", 
                         type : {
                             language : true, 
                             tool : false
@@ -29,7 +29,7 @@ const imageLinks = [{
                     },
                     {
                         name : 'Python', 
-                        src : "../img/skills/python.svg",  
+                        src : "../assets/img/skills/python.svg",  
                         type : {
                             language : true, 
                             tool : false
@@ -37,7 +37,7 @@ const imageLinks = [{
                     },
                     {
                         name : 'Java', 
-                        src : "../img/skills/java.svg", 
+                        src : "../assets/img/skills/java.svg", 
                         type : {
                             language : true, 
                             tool : false
@@ -45,7 +45,7 @@ const imageLinks = [{
                     },
                     {
                         name : 'JavaScript', 
-                        src : "../img/skills/javascript.svg", 
+                        src : "../assets/img/skills/javascript.svg", 
                         type : {
                             language : true, 
                             tool : false
@@ -53,7 +53,7 @@ const imageLinks = [{
                     },
                     {
                         name : 'VS Code', 
-                        src : "../img/skills/vscode.svg", 
+                        src : "../assets/img/skills/vscode.svg", 
                         type : {
                             language : false, 
                             tool : true
@@ -61,7 +61,7 @@ const imageLinks = [{
                     }, 
                     {
                         name : 'Git', 
-                        src : "../img/skills/git.svg", 
+                        src : "../assets/img/skills/git.svg", 
                         type : {
                             language : false, 
                             tool : true
@@ -69,7 +69,7 @@ const imageLinks = [{
                     },
                     {
                         name : 'GitHub', 
-                        src : "../img/skills/github.svg", 
+                        src : "../assets/img/skills/github.svg", 
                         type : {
                             language : false, 
                             tool : true
@@ -77,7 +77,7 @@ const imageLinks = [{
                     },
                     {
                         name : 'WordPress', 
-                        src : "../img/skills/wordpress.svg", 
+                        src : "../assets/img/skills/wordpress.svg", 
                         type : {
                             language : false, 
                             tool : true
@@ -85,7 +85,7 @@ const imageLinks = [{
                     },
                     {
                         name : 'HTML', 
-                        src : "../img/skills/html5.svg", 
+                        src : "../assets/img/skills/html5.svg", 
                         type : {
                             language : true, 
                             tool : false
@@ -93,7 +93,7 @@ const imageLinks = [{
                     }, 
                     {
                         name : 'CSS', 
-                        src : "../img/skills/css3.svg", 
+                        src : "../assets/img/skills/css3.svg", 
                         type : {
                             language : true, 
                             tool : false
@@ -101,7 +101,7 @@ const imageLinks = [{
                     },
                     {
                         name : 'MySQL', 
-                        src : "../img/skills/mysql.svg", 
+                        src : "../assets/img/skills/mysql.svg", 
                         type : {
                             language : true, 
                             tool : false
@@ -109,7 +109,7 @@ const imageLinks = [{
                     },
                     {
                         name : 'SQLite', 
-                        src : "../img/skills/sqlite.svg", 
+                        src : "../assets/img/skills/sqlite.svg", 
                         type : {
                             language : true, 
                             tool : false
@@ -117,7 +117,7 @@ const imageLinks = [{
                     },
                     {
                         name : 'Tailwind CSS', 
-                        src : "../img/skills/tailwindcss.svg", 
+                        src : "../assets/img/skills/tailwindcss.svg", 
                         type : {
                             language : true, 
                             tool : false
@@ -125,7 +125,7 @@ const imageLinks = [{
                     },
                     {
                         name : 'React', 
-                        src : "../img/skills/react.svg", 
+                        src : "../assets/img/skills/react.svg", 
                         type : {
                             language : true, 
                             tool : false
@@ -133,7 +133,7 @@ const imageLinks = [{
                     },
                     {
                         name : 'Django',
-                        src : "../img/skills/django.svg",
+                        src : "../assets/img/skills/django.svg",
                         type : {
                             language : true,
                             tool : false
@@ -141,7 +141,7 @@ const imageLinks = [{
                     },
                     {
                         name : 'PHP',
-                        src : "../img/skills/php.svg",
+                        src : "../assets/img/skills/php.svg",
                         type : {
                             language : true,
                             tool : false

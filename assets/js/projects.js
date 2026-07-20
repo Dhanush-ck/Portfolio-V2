@@ -34,7 +34,7 @@ dropdowns.forEach((dropdown)=> {
 
 const projectList = [{
                         name : "Portfolio V1",
-                        src : "../img/project/portfoliov1/1.png",
+                        src : "../assets/img/project/portfoliov1/1.png",
                         link : "../project/portfoliov1",
                         order : 1,
                         details : "This is my first portfolio website, sharing about my details, skills and contact info. Simple UI and easy to understand.",
@@ -47,7 +47,7 @@ const projectList = [{
                     },
                     {
                         name : "Image Gallery",
-                        src : "../img/project/imagegallery/1.png",
+                        src : "../assets/img/project/imagegallery/1.png",
                         link : "../project/imagegallery",
                         order : 2,
                         details : "It is an image gallery showing images in grid, we can add, remove & replace images. It also contians slideshow feature.",
@@ -60,7 +60,7 @@ const projectList = [{
                     },
                     {
                         name : "Stone Paper Scissors",
-                        src : "../img/project/stonepaperscissor/1.png",
+                        src : "../assets/img/project/stonepaperscissor/1.png",
                         link : "../project/stonepaperscissor",
                         order : 3,
                         details : "This is a digital interface for the normal Rock Paper Scissor we use to play with our hands. In this we play with the computer.",
@@ -73,7 +73,7 @@ const projectList = [{
                     },
                     {
                         name : "Tic Tac Toe",
-                        src : "../img/project/tictactoe/1.png",
+                        src : "../assets/img/project/tictactoe/1.png",
                         link : "../project/tictactoe",
                         order : 4,
                         details : "This is XOX or Tic Tac Toe game. It is two player game, played using X and O. Player who get three consecutively.",
@@ -86,7 +86,7 @@ const projectList = [{
                     },
                     {
                         name : "Portfolio V2",
-                        src : "../img/project/portfoliov2/1.png",
+                        src : "../assets/img/project/portfoliov2/1.png",
                         link : "../project/portfoliov2",
                         order : 5,
                         details : "My latest portfolio. Contains features that aren't in the first portfolio. It has an attractive and simple UI.",
@@ -99,7 +99,7 @@ const projectList = [{
                     },
                     {
                         name : "Vijnana 2025",
-                        src : "../img/project/vijnana25/1.png",
+                        src : "../assets/img/project/vijnana25/1.png",
                         link : "../project/vijnana25",
                         order : 6,
                         details : "Official website of vijnana 2025. Registration and details of the events as part of vijnana are present in this.",
@@ -112,7 +112,7 @@ const projectList = [{
                     },
                     {
                         name : "BMI Calculator",
-                        src : "../img/project/bmicalculator/1.png",
+                        src : "../assets/img/project/bmicalculator/1.png",
                         link : "../project/bmicalculator",
                         order : 7,
                         details : "A simple website for calculating your bmi using height and weight.",
@@ -127,7 +127,7 @@ const projectList = [{
                     },
                     {
                         name : "Trivia App",
-                        src : "../img/project/triviaapp/1.png",
+                        src : "../assets/img/project/triviaapp/1.png",
                         link : "../project/triviaapp",
                         order : 8,
                         details : " A simple trivia website where you can answer questions and get your score.",
@@ -142,7 +142,7 @@ const projectList = [{
                     },
                     {
                         name : "Vijñäna 2026",
-                        src : "../img/project/vijnana26/1.png",
+                        src : "../assets/img/project/vijnana26/1.png",
                         link : "../project/vijnana26",
                         order : 9,
                         details : "Official website of Vijñäna 2026. Registration and details of the events as part of Vijñäna are present in this.",
@@ -155,7 +155,7 @@ const projectList = [{
                     },
                     {
                         name : "Treasure Hunt",
-                        src : "../img/project/treasurehunt/1.jpg",
+                        src : "../assets/img/project/treasurehunt/1.jpg",
                         link : "../project/treasurehunt",
                         order : 10,
                         details : "Website for conducting treasure hunt as part of Vijñäna 2026",
