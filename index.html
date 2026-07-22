@@ -5,152 +5,143 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Dhanush C K - Portfolio</title>
 
+        <!-- SEO Details  -->
         <meta name="description" content="Portfolio of Dhanush C K, BCA Graduate and Full Stack Developer specializing in Django, JavaScript, Python and AI-powered web applications. View projects, skills and experience.">
         <link rel="canonical" href="https://dhanushck.in/">
         <meta name="robots" content="index, follow">
         <meta name="theme-color" content="#7A1CAC">
-
         <meta property="og:type" content="website">
         <meta property="og:title" content="Dhanush C K | Portfolio">
         <meta property="og:description" content="Full Stack Developer specializing in Django, Python and modern web development.">
-        <!-- <meta property="og:image" content="https://yourdomain.com/assets/preview.webp"> -->
+        <meta property="og:image" content="https://dhanushck.in/assets/main.webp">
         <meta property="og:url" content="https://dhanushck.in/">
 
+        <!-- Preconnecting google fonts api -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <!-- Importing fonts from google fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
+        <link rel="preload" as="image" href="./assets/img/main.webp">
+
+        <!-- Importing css files  -->
         <link rel="stylesheet" href="./assets/css/index.css">
         <link rel="stylesheet" href="./assets/css/global.css">
+
+        <!-- JSON-LD for Search Engine -->
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Person",
+                "name": "Dhanush CK",
+                "jobTitle": "Full Stack Developer",
+                "url": "https://dhanushck.in",
+                "sameAs": [
+                    "https://github.com/dhanush-ck",
+                    "https://linkedin.com/in/dhanushck",
+                    "https://instagram.com/dhanushck.in"
+                ],
+                "knowsAbout": ["Full Stack Development", "Web Development", "Python", "Django", "SQL", "SQLite", "Frontend Development", "Backend Development", "JavaScript"],
+            }
+            </script>
     </head>
     <body>
-
+        <!-- Background design -->
         <div class="grain"></div>
         <div class="overlay" id="overlay"></div>
 
+        <!-- Navigation bar -->
         <nav id="nav" class="slide-down">
-
             <div class="logo typing"><span></span></div>
 
             <ul  class="desktop-nav">
-
-                <li><a href="#">Home</a></li>
-                <li><a href="./projects/">Projects</a></li>
-                <li><a href="./skills/">Skills</a></li>
-                <li><a href="./about/">About</a></li>
-                <li><a href="./contact/">Contact</a></li>
-
+                <li><a href="" aria-label="Landing page">Home</a></li>
+                <li><a href="./projects/" aria-label="View projects page">Projects</a></li>
+                <li><a href="./skills/" aria-label="View skills page">Skills</a></li>
+                <li><a href="./about/" aria-label="Know more about me">About</a></li>
+                <li><a href="./contact/" aria-label="See contact details">Contact</a></li>
             </ul>
 
-            <button id="menuBtn" class="menu-btn">
+            <button id="menuBtn" class="menu-btn" aria-label="Open Navigation menu">
                 ☰
             </button>
-
         </nav>
 
+        <!-- Navigation Menu (Hamburger Menu) -->
         <div class="mobile-menu" id="mobileMenu">
+            <button class="close-btn" id="closeBtn" aria-label="Close Navigation menu">✕</button>
 
-            <button class="close-btn" id="closeBtn">✕</button>
-
-            <a href="#">Home</a>
-            <a href="./projects/">Projects</a>
-            <a href="./skills/">Skills</a>
-            <a href="./about/">About</a>
-            <a href="./contact/">Contact</a>
-
+            <a href="" aria-label="Landing page">Home</a>
+            <a href="./projects/" aria-label="View projects page">Projects</a>
+            <a href="./skills/" aria-label="View skills page">Skills</a>
+            <a href="./about/" aria-label="Know more about me">About</a>
+            <a href="./contact/" aria-label="See contact details">Contact</a>
         </div>
 
+        <!-- Hero Section -->
         <section class="hero">
-
+            <!-- Left Side -->
             <div class="left">
-
                 <div class="tag reveal" style="animation-delay:.05s">Hello, I'm</div>
-
                 <h1 class="reveal" style="animation-delay:.15s">Dhanush C K</h1>
-
                 <h2 class="reveal" style="animation-delay:.25s"><b>Full Stack Developer</b> · Software Engineer</h2>
-
                 <p class="reveal" style="animation-delay:.35s">
-
-                I'm really into tech and excited to dive deeper into the industry. Debugging and figuring out bugs is something I genuinely enjoy, and I'm looking forward to picking up more programming languages along the way!
-
+                    I'm really into tech and excited to dive deeper into the industry. Debugging and figuring out bugs is something I genuinely enjoy, and I'm looking forward to picking up more programming languages along the way!
                 </p>
 
                 <div class="buttons reveal" style="animation-delay:.45s">
-
-                    <a href="./projects/" class="btn primary">
+                    <a href="./projects/" class="btn primary" aria-label="View Projects page">
                         View Projects
                     </a>
-
-                    <a href="" class="btn secondary">
+                    <a href="" class="btn secondary" aria-label="Download my resume">
                         Download Resume
                     </a>
-
                 </div>
 
                 <div class="stats reveal" style="animation-delay:.55s">
-
                     <div class="stat">
-
                         <h3>5+</h3>
                         <span>Projects</span>
-
                     </div>
 
                     <div class="stat">
-
                         <h3>3+</h3>
                         <span>Years Learning</span>
-
                     </div>
 
                     <div class="stat">
-
                         <h3>15+</h3>
                         <span>Technologies</span>
-
                     </div>
-
                 </div>
-
             </div>
 
+            <!-- Right Side -->
             <div class="right scale-up" id="rightStage">
-
                 <canvas id="stage"></canvas>
 
                 <div class="image" id="tiltCard">
-
-                     <img src="./assets/img/main_image.png" alt="">
-
+                    <img src="./assets/img/main.webp" alt="My Image">
                 </div>
 
                 <div class="card c1">
-
                     <h4>5+</h4>
                     <p>Projects</p>
-
                 </div>
 
                 <div class="card c2">
-
                     <h4>Tech</h4>
                     <p>Enthusiast</p>
-
                 </div>
 
                 <div class="card c3">
-
                     <h4>🚀</h4>
                     <p>Open to Work</p>
-
                 </div>
-
             </div>
-
         </section>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-        <script src="./assets/js/index.js"></script>
+        <script src="./assets/js/index.js" defer></script>
     </body>
 </html>
