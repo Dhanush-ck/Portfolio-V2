@@ -134,7 +134,9 @@ const mat = new THREE.ShaderMaterial({
 });
 
 const blob = new THREE.Mesh(geo, mat);
-scene.add(blob);
+if(window.innerWidth >= 768) {
+    scene.add(blob);
+}
 
 // Outer wireframe shell
 const shellGeo = new THREE.IcosahedronGeometry(2.05, 1);
@@ -143,7 +145,7 @@ const shell = new THREE.Mesh(shellGeo, shellMat);
 scene.add(shell);
 
 // Ambient particles
-const particleCount = 60;
+const particleCount = window.innerWidth < 768 ? 20 : 60;
 const particleGeo = new THREE.BufferGeometry();
 const positions = new Float32Array(particleCount * 3);
 for(let i=0;i<particleCount;i++){
@@ -178,13 +180,16 @@ function animate(){
 
     const t = clock.getElapsedTime();
 
-    mat.uniforms.uTime.value = t;
+    if(window.innerWidth >= 768) {
 
-    curRotX += (targetRotX - curRotX) * 0.06;
-    curRotY += (targetRotY - curRotY) * 0.06;
-
-    blob.rotation.y = t * 0.18 + curRotY;
-    blob.rotation.x = curRotX;
+        mat.uniforms.uTime.value = t;
+        
+        curRotX += (targetRotX - curRotX) * 0.06;
+        curRotY += (targetRotY - curRotY) * 0.06;
+        
+        blob.rotation.y = t * 0.18 + curRotY;
+        blob.rotation.x = curRotX;
+    }
 
     shell.rotation.y = -t * 0.09;
     shell.rotation.x = t * 0.05;
