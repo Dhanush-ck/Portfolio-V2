@@ -9,16 +9,17 @@ html{
 }
 
 body::before{
-    content:"";
-    position:fixed;
-    width:600px;
-    height:600px;
-    background:#8b5cf630;
-    border-radius:50%;
-    filter:blur(180px);
-    top:-200px;
-    left:-150px;
-    z-index:-3;
+    content: "";
+    position: fixed;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.25) 0%, rgba(0, 0, 0, 0) 70%);
+    border-radius: 50%;
+    top: -200px;
+    left: -150px;
+    z-index: -3;
+    will-change: transform;
+    transform: translateZ(0);
 }
  
 body::after{
