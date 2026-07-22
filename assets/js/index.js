@@ -1,11 +1,10 @@
-
-// nav scroll state
+// Navigation bar scroll state
 const navEl = document.getElementById('nav');
 window.addEventListener('scroll', ()=>{
     navEl.classList.toggle('scrolled', window.scrollY > 20);
 });
 
-// tilt parallax on image card + cards
+// Tilt parallax on image card + cards
 const stageWrap = document.getElementById('rightStage');
 const tiltCard = document.getElementById('tiltCard');
 
@@ -25,8 +24,7 @@ stageWrap.addEventListener('mouseleave', ()=>{
 });
 
 
-// three.js
-
+// Three.js
 let targetRotX = 0, targetRotY = 0;
 
 const canvas = document.getElementById('stage');
@@ -46,7 +44,7 @@ function sizeStage(){
 sizeStage();
 window.addEventListener('resize', sizeStage);
 
-// noise-displaced core
+// Noise-displaced core
 const geo = new THREE.IcosahedronGeometry(1.5, 24);
 
 const noiseGLSL = `
@@ -138,13 +136,13 @@ const mat = new THREE.ShaderMaterial({
 const blob = new THREE.Mesh(geo, mat);
 scene.add(blob);
 
-// outer wireframe shell
+// Outer wireframe shell
 const shellGeo = new THREE.IcosahedronGeometry(2.05, 1);
 const shellMat = new THREE.MeshBasicMaterial({ color:0xc084fc, wireframe:true, transparent:true, opacity:0.12 });
 const shell = new THREE.Mesh(shellGeo, shellMat);
 scene.add(shell);
 
-// ambient particles
+// Ambient particles
 const particleCount = 60;
 const particleGeo = new THREE.BufferGeometry();
 const positions = new Float32Array(particleCount * 3);
@@ -185,8 +183,7 @@ function animate(){
 }
 animate();
 
-// hamburger menu 
-
+// Hamburger menu 
 const menuBtn = document.getElementById("menuBtn");
 const closeBtn = document.getElementById("closeBtn");
 const mobileMenu = document.getElementById("mobileMenu");
@@ -216,6 +213,7 @@ document.querySelectorAll(".mobile-menu a").forEach(link=>{
 });
 
 
+// Typewriter animation 
 const words = [
     "Dhanush C K",
     "Software Developer",

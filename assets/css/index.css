@@ -1,4 +1,3 @@
-
 *{
     margin:0;
     padding:0;
@@ -106,40 +105,30 @@ h1,h2,.logo,.card h4,.stat h3{
 }
 
 nav{
-
     width:100%;
     padding:22px 8%;
-
     display:flex;
     justify-content:space-between;
     align-items:center;
-
     position:fixed;
     top:0;
-
     z-index:100;
     transition:background .4s ease, border-color .4s ease, backdrop-filter .4s ease;
     border-bottom:1px solid transparent;
-
     opacity: 0;
-
 }
 
 nav.scrolled{
-
     background:rgba(8,8,10,.6);
     backdrop-filter:blur(16px);
     border-bottom:1px solid var(--line);
-
 }
 
 .logo{
-
     font-size:22px;
     font-weight:700;
     color:white;
     letter-spacing:.5px;
-
 }
 
 .logo span{
@@ -147,7 +136,6 @@ nav.scrolled{
 }
 
 .typing{
-    /* color:#B56EFF; */
     font-size:1.5rem;
     font-weight:600;
     position:relative;
@@ -165,35 +153,27 @@ nav.scrolled{
 }
 
 @keyframes blink{
-
     50%{
         opacity:0;
     }
-
 }
 
 .desktop-nav{
-
     display:flex;
     gap:38px;
     list-style:none;
     font-size:13px;
-
 }
 
 nav a{
-
     color:var(--mist);
     text-decoration:none;
     transition:color .3s;
     letter-spacing:.3px;
-
 }
 
 nav a:hover{
-
     color:var(--orchid);
-
 }
 
 .menu-btn{
@@ -261,18 +241,14 @@ nav a:hover{
 }
 
 .left{
-
     flex:1;
     max-width:620px;
-
 }
 
 .reveal{
-
     opacity:0;
     transform:translateY(24px);
     animation:rise 2s cubic-bezier(.16,1,.3,1) forwards;
-
 }
 
 @keyframes rise{
@@ -280,7 +256,6 @@ nav a:hover{
 }
 
 .tag{
-
     color:var(--orchid);
     margin-bottom:22px;
     font-size:13px;
@@ -289,38 +264,29 @@ nav a:hover{
     display:inline-flex;
     align-items:center;
     gap:10px;
-
 }
 
 .tag::before{
-
     content:"";
     width:22px;
     height:1px;
     background:var(--orchid);
-
 }
 
 .left h1{
-
-    /* font-size:68px; */
     font-size:clamp(2rem,6vw,4.3rem);
     line-height:1.05;
     margin-bottom:16px;
     font-weight:700;
     letter-spacing:-1px;
-
 }
 
 .left h2{
-
     color:var(--mist);
-    /* font-size:22px; */
     font-size:clamp(1rem,2vw,1.4rem);
     margin-bottom:26px;
     font-weight:400;
     font-family:"Inter",sans-serif;
-
 }
 
 .left h2 b{
@@ -329,25 +295,20 @@ nav a:hover{
 }
 
 .left p{
-
     color:var(--mist);
     line-height:1.8;
     max-width:520px;
     margin-bottom:38px;
-    /* font-size:15px; */
     font-size:clamp(.9rem,1.2vw,1rem);
 }
 
 .buttons{
-
     display:flex;
     gap:16px;
     margin-bottom:50px;
-
 }
 
 .btn{
-
     padding:15px 30px;
     border-radius:50px;
     text-decoration:none;
@@ -355,52 +316,39 @@ nav a:hover{
     font-size:14px;
     transition:.35s;
     position:relative;
-
 }
 
 .primary{
-
     background:var(--amethyst);
     color:white;
-
 }
 
 .primary:hover{
-
     transform:translateY(-4px);
     box-shadow:0 15px 40px #8b5cf666;
-
 }
 
 .secondary{
-
     border:1px solid rgba(255,255,255,.18);
     color:white;
-
 }
 
 .secondary:hover{
-
     background:var(--glass);
     border-color:rgba(255,255,255,.3);
-
 }
 
 .stats{
-
     display:flex;
     gap:0;
     border-top:1px solid var(--line);
     padding-top:26px;
-
 }
 
 .stat{
-
     padding-right:40px;
     margin-right:40px;
     border-right:1px solid var(--line);
-
 }
 
 .stat:last-child{
@@ -408,50 +356,37 @@ nav a:hover{
 }
 
 .stat h3{
-
     color:white;
     font-size:26px;
     font-weight:600;
     margin-bottom:4px;
-
 }
 
 .stat span{
-
     color:var(--mist-dim);
     font-size:11px;
     letter-spacing:.8px;
     text-transform:uppercase;
-
 }
 
 .right{
-
     flex:1;
-
     display:flex;
     justify-content:center;
     align-items:center;
-
     position:relative;
-
     min-height:550px;
-
     width:100%;
     max-width:560px;
-
     perspective:1200px;
-
 }
 
 #stage{
-
     position:absolute;
     inset:0;
     width:100%;
     height:100%;
     z-index:1;
-
 }
 
 .image{
@@ -470,20 +405,16 @@ nav a:hover{
 }
 
 .image::after{
-
     content:"";
     position:absolute;
     inset:0;
     background:linear-gradient(180deg, transparent 40%, rgba(8,8,10,.55) 100%);
-
 }
 
 .image img{
-
     width:100%;
     height:100%;
     object-fit:cover;
-
 }
 
 .card{
@@ -496,7 +427,6 @@ nav a:hover{
     z-index:3;
     animation:float 5s ease-in-out infinite;
     box-shadow:0 10px 30px rgba(0,0,0,.4);
-
 }
 
 .card h4{
@@ -530,7 +460,6 @@ nav a:hover{
 }
 
 @keyframes float{
-
     0%,100%{
         transform:translateY(0px);
     }
@@ -538,7 +467,6 @@ nav a:hover{
     50%{
         transform:translateY(-12px);
     }
-
 }
 
 
