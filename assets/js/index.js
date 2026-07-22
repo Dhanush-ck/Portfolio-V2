@@ -45,7 +45,7 @@ sizeStage();
 window.addEventListener('resize', sizeStage);
 
 // Noise-displaced core
-const geo = new THREE.IcosahedronGeometry(1.5, 24);
+const geo = new THREE.IcosahedronGeometry(1.65, 5);
 
 const noiseGLSL = `
 vec3 mod289(vec3 x){return x - floor(x * (1.0 / 289.0)) * 289.0;}
@@ -162,8 +162,20 @@ scene.add(particles);
 const clock = new THREE.Clock();
 let curRotX = 0, curRotY = 0;
 
+let isCanvasVisible = true;
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        isCanvasVisible = entry.isIntersecting;
+    });
+}, { threshold: 0.1 });
+
+observer.observe(canvas);
+
 function animate(){
     requestAnimationFrame(animate);
+    if (!isCanvasVisible) return;
+
     const t = clock.getElapsedTime();
 
     mat.uniforms.uTime.value = t;
