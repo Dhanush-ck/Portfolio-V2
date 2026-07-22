@@ -134,9 +134,7 @@ const mat = new THREE.ShaderMaterial({
 });
 
 const blob = new THREE.Mesh(geo, mat);
-if(window.innerWidth >= 768) {
-    scene.add(blob);
-}
+scene.add(blob);
 
 // Outer wireframe shell
 const shellGeo = new THREE.IcosahedronGeometry(2.05, 1);
@@ -180,16 +178,13 @@ function animate(){
 
     const t = clock.getElapsedTime();
 
-    if(window.innerWidth >= 768) {
+    mat.uniforms.uTime.value = t;
 
-        mat.uniforms.uTime.value = t;
-        
-        curRotX += (targetRotX - curRotX) * 0.06;
-        curRotY += (targetRotY - curRotY) * 0.06;
-        
-        blob.rotation.y = t * 0.18 + curRotY;
-        blob.rotation.x = curRotX;
-    }
+    curRotX += (targetRotX - curRotX) * 0.06;
+    curRotY += (targetRotY - curRotY) * 0.06;
+
+    blob.rotation.y = t * 0.18 + curRotY;
+    blob.rotation.x = curRotX;
 
     shell.rotation.y = -t * 0.09;
     shell.rotation.x = t * 0.05;
