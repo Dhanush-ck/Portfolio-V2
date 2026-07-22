@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <!-- Home page -->
+    <url>
+        <loc>https://dhanushck.in/</loc>
+        <lastmod>2026-07-22</lastmod>
+    </url>
+
+    <!-- Projects page -->
+    <url>
+        <loc>https://dhanushck.in/projects</loc>
+        <lastmod>2026-07-22</lastmod>
+    </url>
+
+    <!-- Skills page -->
+    <url>
+        <loc>https://dhanushck.in/skills</loc>
+        <lastmod>2026-07-22</lastmod>
+    </url>
+
+    <!-- About page -->
+    <url>
+        <loc>https://dhanushck.in/about</loc>
+        <lastmod>2026-07-22</lastmod>
+    </url>
+
+    <!-- Contact page -->
+    <url>
+        <loc>https://dhanushck.in/contact</loc>
+        <lastmod>2026-07-22</lastmod>
+    </url>
+
+    <!-- Bmi Calculator Page (Project) -->
+    <url>
+        <loc>https://dhanushck.in/project/bmicalculator</loc>
+        <lastmod>2026-07-22</lastmod>
+    </url>
+
+    <!-- Image Gallery (Project) -->
+    <url>
+        <loc>https://dhanushck.in/project/imagegallery</loc>
+        <lastmod>2026-07-22</lastmod>
+    </url>
+
+    <!-- Portfolio V1 (Project) -->
+    <url>
+        <loc>https://dhanushck.in/project/portfoliov1</loc>
+        <lastmod>2026-07-22</lastmod>
+    </url>
+
+    <!-- Portfolio V2 (Project) -->
+    <url>
+        <loc>https://dhanushck.in/project/portfoliov2</loc>
+        <lastmod>2026-07-22</lastmod>
+    </url>
+
+    <!-- Stone Paper Scissor (Project) -->
+    <url>
+        <loc>https://dhanushck.in/project/stonepaperscissor</loc>
+        <lastmod>2026-07-22</lastmod>
+    </url>
+
+    <!-- Tic Tac Toe (Project) -->
+    <url>
+        <loc>https://dhanushck.in/project/tictactoe</loc>
+        <lastmod>2026-07-22</lastmod>
+    </url>
+
+    <!-- Treasure Hunt (Project) -->
+    <url>
+        <loc>https://dhanushck.in/project/treasurehunt</loc>
+        <lastmod>2026-07-22</lastmod>
+    </url>
+
+    <!-- Trivia App (Project) -->
+    <url>
+        <loc>https://dhanushck.in/project/triviaapp</loc>
+        <lastmod>2026-07-22</lastmod>
+    </url>
+
+    <!-- Vijnana25 (Project) -->
+    <url>
+        <loc>https://dhanushck.in/project/vijnana25</loc>
+        <lastmod>2026-07-22</lastmod>
+    </url>
+
+    <!-- Vijnana26 (Project) -->
+    <url>
+        <loc>https://dhanushck.in/project/vijnana26</loc>
+        <lastmod>2026-07-22</lastmod>
+    </url>
+
+</urlset>
