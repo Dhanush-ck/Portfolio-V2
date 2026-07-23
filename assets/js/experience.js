@@ -1,8 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
     
-    /* ==========================================================================
-       Intersection Observer for Entry Animations
-       ========================================================================== */
     const observerOptions = {
         root: null,
         rootMargin: '0px',
@@ -13,20 +10,16 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                // Optional: Unobserve after animating once for better performance
                 observer.unobserve(entry.target); 
             }
         });
     }, observerOptions);
 
-    // Select all elements that need to be animated on scroll
     const animatedElements = document.querySelectorAll('.animate-fade-up, .animate-slide-left, .animate-slide-right');
     animatedElements.forEach(el => observer.observe(el));
 
 
-    /* ==========================================================================
-       Dynamic Timeline Line & Glowing Nodes
-       ========================================================================== */
+    // Timeline  
     const timelineWrap = document.querySelector('.timeline-wrap');
     const progressBar = document.querySelector('.timeline-progress-fill');
     const nodes = document.querySelectorAll('.timeline-node');
@@ -44,16 +37,11 @@ document.addEventListener('DOMContentLoaded', () => {
         // Calculate the fill percentage
         let progress = (triggerPoint - rect.top) / rect.height;
         
-        // Clamp progress between 0 and 1
         progress = Math.max(0, Math.min(1, progress));
-        
-        // Apply height to progress bar
         progressBar.style.height = `${progress * 100}%`;
 
-        // Check each node to see if it should glow
         nodes.forEach(node => {
             const nodeRect = node.getBoundingClientRect();
-            // If the node reaches above the middle of the screen (the fill line)
             if (nodeRect.top < triggerPoint) {
                 node.classList.add('active');
             } else {
@@ -61,16 +49,40 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-
-    // Attach scroll and resize listeners for recalculations
     window.addEventListener('scroll', updateTimelineOnScroll, { passive: true });
     window.addEventListener('resize', updateTimelineOnScroll, { passive: true });
-    
-    // Initial call to set state on load
+
     updateTimelineOnScroll();
 });
 
+// Navigation scroll state
 const navEl = document.querySelector('.top-nav');
 window.addEventListener('scroll', ()=>{
     navEl.classList.toggle('scrolled', window.scrollY > 20);
+});
+
+// Side menu (Hamburger menu)
+const menuBtn = document.getElementById("menuBtn");
+const closeBtn = document.getElementById("closeBtn");
+const mobileMenu = document.getElementById("mobileMenu");
+const overlay = document.getElementById("overlay");
+
+function openMenu(){
+    mobileMenu.classList.add("active");
+    overlay.classList.add("active");
+    document.body.style.overflow = "hidden";
+}
+
+function closeMenu(){
+    mobileMenu.classList.remove("active");
+    overlay.classList.remove("active");
+    document.body.style.overflow = "";
+}
+
+menuBtn.onclick = openMenu;
+closeBtn.onclick = closeMenu;
+overlay.onclick = closeMenu;
+
+document.querySelectorAll(".mobile-menu a").forEach(link=>{
+    link.onclick = closeMenu;
 });
