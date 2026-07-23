@@ -1,17 +1,10 @@
-/* =========================================================
-   CONTACT PAGE JS
-   1) Mouse-follow spotlight inside each contact card
-   2) Scroll-reveal for cards / sections
-   ========================================================= */
-
 document.addEventListener("DOMContentLoaded", () => {
 
     const prefersReducedMotion = window.matchMedia(
         "(prefers-reduced-motion: reduce)"
     ).matches;
 
-    /* ---------- Mouse-follow spotlight ---------- */
-
+    // Mouse-follow spotlight
     const cards = document.querySelectorAll(".contact-card");
 
     cards.forEach((card) => {
@@ -24,8 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    /* ---------- Scroll reveal ---------- */
-
+    // Scroll reveal
     const revealEls = document.querySelectorAll(".reveal");
 
     if (prefersReducedMotion) {
@@ -55,7 +47,34 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
+// Navigation bar on scroll state
 const navEl = document.querySelector('.top-nav');
 window.addEventListener('scroll', ()=>{
     navEl.classList.toggle('scrolled', window.scrollY > 20);
+});
+
+// Side menu (Hamburger menu)
+const menuBtn = document.getElementById("menuBtn");
+const closeBtn = document.getElementById("closeBtn");
+const mobileMenu = document.getElementById("mobileMenu");
+const overlay = document.getElementById("overlay");
+
+function openMenu(){
+    mobileMenu.classList.add("active");
+    overlay.classList.add("active");
+    document.body.style.overflow = "hidden";
+}
+
+function closeMenu(){
+    mobileMenu.classList.remove("active");
+    overlay.classList.remove("active");
+    document.body.style.overflow = "";
+}
+
+menuBtn.onclick = openMenu;
+closeBtn.onclick = closeMenu;
+overlay.onclick = closeMenu;
+
+document.querySelectorAll(".mobile-menu a").forEach(link=>{
+    link.onclick = closeMenu;
 });
