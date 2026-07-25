@@ -30,14 +30,12 @@ html{
 }
 
 body{
-
     font-family:"Inter",sans-serif;
     background:var(--void);
     color:white;
     overflow-x:hidden;
     position:relative;
     line-height:1.6;
-
 }
 
 h1,h2,h3,.logo,.stat-value,.timeline-date{
@@ -263,7 +261,7 @@ body::after{
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1000;
+    z-index: 998;
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border-bottom:1px solid transparent;
@@ -376,7 +374,7 @@ body::after{
     opacity:0;
     visibility:hidden;
     transition:.3s;
-    z-index:998;
+    z-index:999;
 }
 
 .overlay.active{
