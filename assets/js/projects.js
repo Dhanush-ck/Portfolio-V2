@@ -10,6 +10,7 @@ const projectElements = document.querySelectorAll('.projects-elements');
 
 const dropdowns = [selected, listItems[0], listItems[1], listItems[2], listItems[3]];
 
+// Animations
 dropdowns.forEach((dropdown)=> {
     dropdown.addEventListener('mouseover', ()=>{
         list.style.zIndex = "1000";
@@ -32,6 +33,7 @@ dropdowns.forEach((dropdown)=> {
     })
 })
 
+// Portfolio list
 const projectList = [{
                         name : "Portfolio V1",
                         src : "../assets/img/project/portfoliov1/1.webp",
@@ -46,49 +48,10 @@ const projectList = [{
                         ]
                     },
                     {
-                        name : "Image Gallery",
-                        src : "../assets/img/project/imagegallery/1.webp",
-                        link : "../project/imagegallery",
-                        order : 2,
-                        details : "It is an image gallery showing images in grid, we can add, remove & replace images. It also contians slideshow feature.",
-                        language : [
-                            "CSS",
-                            "Git",
-                            "HTML",
-                            "JavaScript",
-                        ]
-                    },
-                    {
-                        name : "Stone Paper Scissors",
-                        src : "../assets/img/project/stonepaperscissor/1.webp",
-                        link : "../project/stonepaperscissor",
-                        order : 3,
-                        details : "This is a digital interface for the normal Rock Paper Scissor we use to play with our hands. In this we play with the computer.",
-                        language : [
-                            "CSS",
-                            "Git",
-                            "HTML",
-                            "JavaScript",
-                        ]
-                    },
-                    {
-                        name : "Tic Tac Toe",
-                        src : "../assets/img/project/tictactoe/1.webp",
-                        link : "../project/tictactoe",
-                        order : 4,
-                        details : "This is XOX or Tic Tac Toe game. It is two player game, played using X and O. Player who get three consecutively.",
-                        language : [
-                            "CSS",
-                            "Git",
-                            "HTML",
-                            "JavaScript",
-                        ]
-                    },
-                    {
                         name : "Portfolio V2",
                         src : "../assets/img/project/portfoliov2/1.webp",
                         link : "../project/portfoliov2",
-                        order : 5,
+                        order : 2,
                         details : "My latest portfolio. Contains features that aren't in the first portfolio. It has an attractive and simple UI.",
                         language : [
                             "CSS",
@@ -101,7 +64,7 @@ const projectList = [{
                         name : "Vijnana 2025",
                         src : "../assets/img/project/vijnana25/1.webp",
                         link : "../project/vijnana25",
-                        order : 6,
+                        order : 3,
                         details : "Official website of vijnana 2025. Registration and details of the events as part of vijnana are present in this.",
                         language : [
                             "CSS",
@@ -114,7 +77,7 @@ const projectList = [{
                         name : "BMI Calculator",
                         src : "../assets/img/project/bmicalculator/1.webp",
                         link : "../project/bmicalculator",
-                        order : 7,
+                        order : 4,
                         details : "A simple website for calculating your bmi using height and weight.",
                         language : [
                             "CSS",
@@ -129,7 +92,7 @@ const projectList = [{
                         name : "Trivia App",
                         src : "../assets/img/project/triviaapp/1.webp",
                         link : "../project/triviaapp",
-                        order : 8,
+                        order : 5,
                         details : " A simple trivia website where you can answer questions and get your score.",
                         language : [
                             "Django",
@@ -144,7 +107,7 @@ const projectList = [{
                         name : "Vijñäna 2026",
                         src : "../assets/img/project/vijnana26/1.webp",
                         link : "../project/vijnana26",
-                        order : 9,
+                        order : 6,
                         details : "Official website of Vijñäna 2026. Registration and details of the events as part of Vijñäna are present in this.",
                         language : [
                             "CSS",
@@ -157,7 +120,7 @@ const projectList = [{
                         name : "Treasure Hunt",
                         src : "../assets/img/project/treasurehunt/1.webp",
                         link : "../project/treasurehunt",
-                        order : 10,
+                        order : 7,
                         details : "Website for conducting treasure hunt as part of Vijñäna 2026",
                         language : [
                             "CSS",
@@ -197,7 +160,7 @@ function sortElements(e) {
     projects.innerHTML = " ";
     var i = 1;
     tempLists.forEach((tempList)=>{
-        projects.innerHTML += `<div class="projects-elements" style="--i:${i}" data-value=${i}><img src="${tempList.src}"><span class="project-name">${tempList.name}</span><p>${tempList.details}</p><a href="${tempList.link}"><div class="hover-div"><span class="hover-button">View</span></div></a></div>`;
+        projects.innerHTML += `<div class="projects-elements" style="--i:${i}" data-value=${i}><img src="${tempList.src}" alt="${tempList.name} Thumbnail" loading="lazy"><span class="project-name">${tempList.name}</span><p>${tempList.details}</p><a href="${tempList.link}"><div class="hover-div"><span class="hover-button">View</span></div></a></div>`;
         i++;
     }) 
 
@@ -221,16 +184,38 @@ function sortElements(e) {
 }
 sortElements(3);
 
-
+// Page refresh after window resize
 let resizeTimer;
 
 window.addEventListener("resize", () => {
-    // checkMobile();
     clearTimeout(resizeTimer);
-
     resizeTimer = setTimeout(() => {
         location.reload();
-    }, 200); // Reload 300ms after resizing stops
+    }, 1); 
 });
 
-const elements = document.querySelectorAll(".projects-elements");
+// Side menu (Hamburger menu)
+const menuBtn = document.getElementById("menuBtn");
+const closeBtn = document.getElementById("closeBtn");
+const mobileMenu = document.getElementById("mobileMenu");
+const overlay = document.getElementById("overlay");
+
+function openMenu(){
+    mobileMenu.classList.add("active");
+    overlay.classList.add("active");
+    document.body.style.overflow = "hidden";
+}
+
+function closeMenu(){
+    mobileMenu.classList.remove("active");
+    overlay.classList.remove("active");
+    document.body.style.overflow = "";
+}
+
+menuBtn.onclick = openMenu;
+closeBtn.onclick = closeMenu;
+overlay.onclick = closeMenu;
+
+document.querySelectorAll(".mobile-menu a").forEach(link=>{
+    link.onclick = closeMenu;
+});
