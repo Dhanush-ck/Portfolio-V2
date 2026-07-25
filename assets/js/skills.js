@@ -11,6 +11,7 @@ const listItemsLeft = document.querySelectorAll('.dropdown-list-elements-left');
 const orderLeft = document.querySelector('.order-left');
 const arrowLeft = document.querySelector('.arrow-left');
 
+// Skills
 const imageLinks = [{
                         name : 'C++', 
                         src : "../assets/img/skills/cpp.svg", 
@@ -154,6 +155,7 @@ const dropdownsLeft = [selectedLeft, listItemsLeft[0], listItemsLeft[1], listIte
 var currentImageLinks = imageLinks;
 var currentSort;
 
+// Animation
 dropdowns.forEach((dropdown)=> {
     dropdown.addEventListener('mouseover', ()=>{
         list.classList.add('fadeIn');
@@ -194,24 +196,21 @@ dropdownsLeft.forEach((dropdownLeft)=>{
     })
 })
 
-//filter
+//Filter
 listItemsLeft.forEach((listItemLeft)=>{
     listItemLeft.addEventListener('click', ()=>{
         skills.innerHTML = "";
         var tempLinks = [];
-        // console.log(tempLinks.length);
         const currentValue = listItemLeft.getAttribute('data-value');
         if(currentValue == 1 ) {
             imageLinks.forEach((imageLink)=>{
                 tempLinks.push(imageLink);
-                // skills.innerHTML += `<div class="skill-elements"><img src="${imageLink.src}"><span>${imageLink.name}</span></div>`;
             })
         }
         else if(currentValue == 2) {
             imageLinks.forEach((imageLink)=>{
                 if(imageLink.type.language){
                     tempLinks.push(imageLink);
-                    // skills.innerHTML += `<div class="skill-elements"><img src="${imageLink.src}"><span>${imageLink.name}</span></div>`;
                 }
             })
         }
@@ -219,7 +218,6 @@ listItemsLeft.forEach((listItemLeft)=>{
             imageLinks.forEach((imageLink)=>{
                 if(imageLink.type.tool){
                     tempLinks.push(imageLink);
-                    // skills.innerHTML += `<div class="skill-elements"><img src="${imageLink.src}"><span>${imageLink.name}</span></div>`;
                 }
             })
         }
@@ -231,7 +229,7 @@ listItemsLeft.forEach((listItemLeft)=>{
     })
 })
 
-//sort
+//Sort
 listItems.forEach((listItem)=>{
     listItem.addEventListener('click', ()=>{
         const currentValue = listItem.getAttribute('data-value');
@@ -253,7 +251,7 @@ function sortElements(e) {
     skills.innerHTML = "";
     var i = 1;
     currentImageLinks.forEach((tempLink)=>{
-        skills.innerHTML += `<div class="skill-elements" style="--i:${i}"><img src="${tempLink.src}" style="--i:${i}"><span>${tempLink.name}</span></div>`;
+        skills.innerHTML += `<div class="skill-elements" style="--i:${i}"><img src="${tempLink.src}" alt="${tempLink.name} Logo" loading="lazy" style="--i:${i}"><span>${tempLink.name}</span></div>`;
         i++;
     })
 }
@@ -262,8 +260,34 @@ function displaySkills(){
     imageLinks.sort((a,b)=>a.name.localeCompare(b.name));
     var i = 1;
     imageLinks.forEach((tempLink)=>{
-        skills.innerHTML += `<div class="skill-elements" style="--i:${i}"><img src="${tempLink.src}" style="--i:${i}"><span>${tempLink.name}</span></div>`;
+        skills.innerHTML += `<div class="skill-elements" style="--i:${i}"><img src="${tempLink.src}" alt="${tempLink.name} Logo" loading="lazy" style="--i:${i}"><span>${tempLink.name}</span></div>`;
         i++;
     })
 }
 displaySkills();
+
+// Side menu (Hamburger menu)
+const menuBtn = document.getElementById("menuBtn");
+const closeBtn = document.getElementById("closeBtn");
+const mobileMenu = document.getElementById("mobileMenu");
+const overlay = document.getElementById("overlay");
+
+function openMenu(){
+    mobileMenu.classList.add("active");
+    overlay.classList.add("active");
+    document.body.style.overflow = "hidden";
+}
+
+function closeMenu(){
+    mobileMenu.classList.remove("active");
+    overlay.classList.remove("active");
+    document.body.style.overflow = "";
+}
+
+menuBtn.onclick = openMenu;
+closeBtn.onclick = closeMenu;
+overlay.onclick = closeMenu;
+
+document.querySelectorAll(".mobile-menu a").forEach(link=>{
+    link.onclick = closeMenu;
+});
