@@ -4,50 +4,99 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../assets/img/title_icon.webp" type="image/x-icon">
-    <title>Dhanush CK - Portfolio</title>
+    <title>Skills - Dhanush CK</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <!-- SEO -->
+    <link rel="canonical" href="https://dhanushck.in/skills">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="Explore the technical skills, programming languages, technologies, frameworks, databases, and development tools known by Dhanush C K, highlighting expertise in modern web development, software engineering, responsive design, and problem solving.">
+    <meta property="og:title" content="Skills - Dhanush C K">
+    <meta property="og:description" content="Explore the technical skills, programming languages, technologies, frameworks, databases, and development tools known by Dhanush C K, highlighting expertise in modern web development, software engineering, responsive design, and problem solving.">
+    <meta property="og:url" content="https://dhanushck.in/skills">
+    <meta property="og:type" content="website">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Skills - Dhanush C K">
+    <meta property="twitter:description" content="Explore the technical skills, programming languages, technologies, frameworks, databases, and development tools known by Dhanush C K, highlighting expertise in modern web development, software engineering, responsive design, and problem solving.">
+    <meta property="twitter:url" content="https://dhanushck.in/skills">
 
+    <!-- Preconnecting google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Importing fonts from google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Importing bootstrap icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 
+    <!-- Importing css files -->
     <link rel="stylesheet" href="../assets/css/skills.css">
     <link rel="stylesheet" href="../assets/css/global.css">
+
+    <!-- Structured data for search engine -->
+    <script type="application/ld+json">
+        {
+        "@context":"https://schema.org",
+        "@type":"WebPage",
+        "name":"Skills",
+        "url":"https://dhanushck.in/skills/",
+        "description":"Technical skills including Django, Python, JavaScript, HTML, CSS, SQL, and Git."
+        }
+    </script>
 </head>
 <body>
-    <div class="container">
-        <div class="navigation-panel slideDown">
-            <a href="../index.html" class="home-btn" aria-label="Go to Home page">
-                <i class="bi bi-house"></i>
-            </a>
-            <div class="nav-text">
-                <span>SKILLS</span>
+    <!-- Navigation -->
+    <nav class="top-nav slide-down">
+            <div class="nav-container">
+                <a href="../index.html" class="home-btn" aria-label="Go to Home page">
+                    <i class="bi bi-house home"></i>
+                </a>
+                <span class="nav-title">SKILLS</span> 
+                <button id="menuBtn" class="menu-btn" aria-label="Open Navigation menu">
+                        ☰
+                </button>
             </div>
-        </div>
-        <div class="container-elements">
-            <div class="dropdown">
-                <div class="first">
-                    <div class="selected-left"><span class="arrow-left">&darr;</span>&numsp;<span class="order-left">All</span></div>
-                    <ul class="dropdown-list-left">
-                        <li data-value="1" class="dropdown-list-elements-left">All</li>
-                        <li data-value="2" class="dropdown-list-elements-left">Languages</li>
-                        <li data-value="3" class="dropdown-list-elements-left">Tools</li>
-                    </ul>
-                </div>
+    </nav>
 
-                <div class="second">
-                    <div class="selected"><span class="arrow">&darr;</span>&numsp;<span class="order">Ascending</span></div>
-                    <ul class="dropdown-list">
-                        <li data-value="1" class="dropdown-list-elements">Ascending</li>
-                        <li data-value="2" class="dropdown-list-elements">Descending</li>
-                    </ul>
-                </div>
-            </div>
+    <!-- Menu bar (Hamburger menu) -->
+    <div class="mobile-menu" id="mobileMenu" aria-label="Menubar">
+            <button class="close-btn" id="closeBtn" aria-label="Close Navigation menu">✕</button>
 
-            <div class="skills">
-
-            </div>
-        </div>
+            <a href="/" aria-label="Landing page">Home</a>
+            <a href="../projects/" aria-label="View projects page">Projects</a>
+            <a href="../skills/" class="active-page" aria-label="View skills page">Skills</a>
+            <a href="../about/" aria-label="Know more about me">About</a>
+            <a href="../experience/" aria-label="Know about professional experience">Experience</a>
+            <a href="../contact/" aria-label="See contact details">Contact</a>
     </div>
+    <div class="overlay" id="overlay"></div>
+
+    <main class="container-elements">
+        <div class="dropdown">
+            <!-- Filtering -->
+            <div class="first">
+                <div class="selected-left"><span class="arrow-left">&darr;</span>&numsp;<span class="order-left">All</span></div>
+                <ul class="dropdown-list-left">
+                    <li data-value="1" class="dropdown-list-elements-left">All</li>
+                    <li data-value="2" class="dropdown-list-elements-left">Languages</li>
+                    <li data-value="3" class="dropdown-list-elements-left">Tools</li>
+                </ul>
+            </div>
+
+            <!-- Sorting -->
+            <div class="second">
+                <div class="selected"><span class="arrow">&darr;</span>&numsp;<span class="order">Ascending</span></div>
+                <ul class="dropdown-list">
+                    <li data-value="1" class="dropdown-list-elements">Ascending</li>
+                    <li data-value="2" class="dropdown-list-elements">Descending</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="skills">
+            <!-- Skills appear here -->
+        </div>
+    </main>
     <script src="../assets/js/skills.js"></script>
 </body>
 </html>
