@@ -4,42 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../assets/img/title_icon.webp" type="image/x-icon">
-    <title>Dhanush CK - Portfolio</title>
+    <title>Projects - Dhanush C K</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <!-- SEO -->
+    <link rel="stylesheet" href="https://dhanushck.in/projects">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="Browse the projects built by Dhanush C K, featuring web applications, AI solutions, academic projects, software development work, source code, live demos, and the technologies used in each project.">
+    <meta property="og:title" content="Projects - Dhanush C K">
+    <meta property="og:description" content="Browse the projects built by Dhanush C K, featuring web applications, AI solutions, academic projects, software development work, source code, live demos, and the technologies used in each project.">
+    <meta property="og:url" content="https://dhanushck.in/projects">
+    <meta property="og:type" content="website">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Projects - Dhanush C K">
+    <meta property="twitter:description" content="Browse the projects built by Dhanush C K, featuring web applications, AI solutions, academic projects, software development work, source code, live demos, and the technologies used in each project.">
+    <meta property="twitter:url" content="https://dhanushck.in/projects">
 
+    <!-- Preconnecting google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Importing fonts from google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Importing bootstrap icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 
+    <!-- Importing css files -->
     <link rel="stylesheet" href="../assets/css/projects.css">
     <link rel="stylesheet" href="../assets/css/global.css">
 </head>
 <body>
-    <div class="container">
-        <div class="navigation-panel slideDown">
-            <a href="../index.html" class="home-btn" aria-label="Go to Home page">
-                <i class="bi bi-house home"></i>
-            </a>
-            <div class="nav-text">
-                <span>PROJECTS</span>
+    <!-- Navigation -->
+    <nav class="top-nav slide-down">
+            <div class="nav-container">
+                <a href="../index.html" class="home-btn" aria-label="Go to Home page">
+                    <i class="bi bi-house home"></i>
+                </a>
+                <span class="nav-title">PROJECTS</span> 
+                <button id="menuBtn" class="menu-btn" aria-label="Open Navigation menu">
+                        ☰
+                </button>
             </div>
-        </div>
-        <div class="container-elements">
-            <div class="dropdown">
-                <div class="sort">
-                    <div class="selected"><span class="arrow">&darr;</span>&numsp;<span class="order">Latest</span></div>
-                    <ul class="dropdown-list">
-                        <li data-value="1" class="dropdown-list-elements">Ascending</li>
-                        <li data-value="2" class="dropdown-list-elements">Descending</li>
-                        <li data-value="3" class="dropdown-list-elements">Latest</li>
-                        <li data-value="4" class="dropdown-list-elements">Oldest</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="projects">
-                
-            </div>
-        </div>
+    </nav>
+
+    <!-- Menu bar (Hamburger menu) -->
+    <div class="mobile-menu" id="mobileMenu" aria-label="Menubar">
+            <button class="close-btn" id="closeBtn" aria-label="Close Navigation menu">✕</button>
+
+            <a href="/" aria-label="Landing page">Home</a>
+            <a href="../projects/" class="active-page" aria-label="View projects page">Projects</a>
+            <a href="../skills/" aria-label="View skills page">Skills</a>
+            <a href="../about/" aria-label="Know more about me">About</a>
+            <a href="../experience/" aria-label="Know about professional experience">Experience</a>
+            <a href="../contact/" aria-label="See contact details">Contact</a>
     </div>
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Main section -->
+    <main class="container-elements">
+        <div class="dropdown">
+            <div class="sort">
+                <div class="selected"><span class="arrow">&darr;</span>&numsp;<span class="order">Latest</span></div>
+                <ul class="dropdown-list">
+                    <li data-value="1" class="dropdown-list-elements">Ascending</li>
+                    <li data-value="2" class="dropdown-list-elements">Descending</li>
+                    <li data-value="3" class="dropdown-list-elements">Latest</li>
+                    <li data-value="4" class="dropdown-list-elements">Oldest</li>
+                </ul>
+            </div>
+        </div>
+        <div class="projects">
+            <!-- Projects appear here -->
+        </div>
+    </main>
     <script src="../assets/js/projects.js"></script>
 </body>
 </html>
