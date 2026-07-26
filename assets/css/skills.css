@@ -425,13 +425,13 @@ body{
 /* Responsive */
 @media only screen and (min-width: 300px) and (max-width: 330px) {
 
-    #home {
-        height: 20px;
-        width: 20px;
+    .nav-container {
+        padding: 0.5rem 0;
+        width: 95%;
     }
 
-    .nav-text h4 {
-        font-size: 20px;
+    .nav-title {
+        font-size: 0.8rem;
     }
 
     .container-elements {
@@ -451,13 +451,13 @@ body{
 
 @media only screen and (min-width: 330px) and (max-width: 400px) {
 
-    #home {
-        height: 20px;
-        width: 20px;
+    .nav-container {
+        padding: 0.5rem 0;
+        width: 95%;
     }
 
-    .nav-text h4 {
-        font-size: 20px;
+    .nav-title {
+        font-size: 0.8rem;
     }
 
     .container-elements {
@@ -476,13 +476,13 @@ body{
 
 @media only screen and (min-width: 400px) and (max-width: 600px) {
 
-    #home {
-        height: 25px;
-        width: 25px;
+    .nav-container {
+        padding: 0.6rem 0;
+        width: 90%;
     }
 
-    .nav-text h4 {
-        font-size: 25px;
+    .home {
+        font-size: 15px;
     }
 
     .skill-elements {
@@ -492,13 +492,13 @@ body{
 }
 
 @media only screen and (min-width: 600px) and (max-width: 800px) {
-    #home {
-        width: 35px;
-        height: 35px;
+    .nav-container {
+        padding: 0.6rem 0;
+        width: 90%;
     }
 
-    .nav-text h4 {
-        font-size: 35px;
+    .home {
+        font-size: 15px;
     }
 
     .container-elements {
@@ -515,13 +515,13 @@ body{
 }
 
 @media only screen and (min-width: 800px) and (max-width: 992px) {
-    #home {
-        height: 35px;
-        width: 35px;
+    .nav-container {
+        padding: 0.6rem 0;
+        width: 90%;
     }
 
-    .nav-text h4 {
-        font-size: 35px;
+    .home {
+        font-size: 15px;
     }
 
     .container-elements {
@@ -538,13 +538,13 @@ body{
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
-    #home {
-        height: 35px;
-        width: 35px;
+    .nav-container {
+        padding: 0.6rem 0;
+        width: 90%;
     }
 
-    .nav-text h4 {
-        font-size: 35px;
+    .home {
+        font-size: 15px;
     }
 
     .container-elements {
@@ -562,13 +562,13 @@ body{
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1200px) and (max-height: 600px) {
-    #home {
-        height: 25px;
-        width: 25px;
+    .nav-container {
+        padding: 0.6rem 0;
+        width: 90%;
     }
 
-    .nav-text h4 {
-        font-size: 25px;
+    .home {
+        font-size: 15px;
     }
 
     .container-elements {
@@ -581,13 +581,13 @@ body{
 
 }
 @media only screen and (max-width: 200px) and (max-height: 300px) {
-    #home {
-        height: 10px;
-        width: 10px;
+    .nav-container {
+        padding: 0.5rem 0;
+        width: 95%;
     }
 
-    .nav-text h4 {
-        font-size: 10px;
+    .nav-title {
+        font-size: 0.8rem;
     }
 
     .selected, .selected-left {
@@ -616,13 +616,13 @@ body{
 }
 
 @media only screen and (max-width: 315px) {
-    #home {
-        height: 15px;
-        width: 15px;
+    .nav-container {
+        padding: 0.5rem 0;
+        width: 95%;
     }
 
-    .nav-text h4 {
-        font-size: 15px;
+    .nav-title {
+        font-size: 0.8rem;
     }
 
     .selected, .selected-left {
@@ -651,13 +651,13 @@ body{
 }
 
 @media only screen and (min-width: 200px) and (max-width: 300px) and (min-height: 100px) and (max-height: 200px) {
-    #home {
-        height: 15px;
-        width: 15px;
+    .nav-container {
+        padding: 0.5rem 0;
+        width: 95%;
     }
 
-    .nav-text h4 {
-        font-size: 15px;
+    .nav-title {
+        font-size: 0.8rem;
     }
 
     .selected, .selected-left {
