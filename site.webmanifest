@@ -1,0 +1,25 @@
+{
+  "name": "Dhanush C K - Portfolio",
+   "short_name": "Dhanush",
+  "description": "Portfolio of Dhanush C K - Web Developer, AI Enthusiast and Designer.",
+  "start_url": "/",
+  "scope": "/",
+  "orientation": "portrait-primary",
+  "theme_color": "#7A1CAC",
+  "background_color": "#08080A",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "/assets/img/icons/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/img/icons/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
