@@ -3,26 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="../../assets/img/title_icon.webp" type="image/x-icon">
-    <title>Dhanush CK - Portfolio</title>
+    <title>Vijnana 2026 - Dhanush C K</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../../assets/img/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="../../assets/img/icons/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="../../assets/img/icons/favicon.svg" />
+    <link rel="icon" href="../../assets/img/icons/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../../assets/img/icons/favicon.ico" />
+    <link rel="manifest" href="../../site.webmanifest">
+    
+    <!-- SEO -->
+    <link rel="canonical" href="https://dhanushck.in/project/vijnana26">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#7A1CAC">
+    <meta name="description" content="Explore the Vijñāna 2026 technical fest website, designed to manage event details, registrations, announcements, schedules, and participant engagement with a responsive and user-friendly interface.">
+    <meta property="og:title" content="Vijnana 2025 - Dhanush C K">
+    <meta property="og:description" content="Explore the Vijñāna 2026 technical fest website, designed to manage event details, registrations, announcements, schedules, and participant engagement with a responsive and user-friendly interface.">
+    <meta property="og:url" content="https://dhanushck.in/project/vijnana26">
+    <meta property="og:image" content="https://dhanushck.in/assets/project/vijnana26/1.webp">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Vijnana 2025 - Dhanush C K">
+    <meta property="twitter:description" content="Explore the Vijñāna 2026 technical fest website, designed to manage event details, registrations, announcements, schedules, and participant engagement with a responsive and user-friendly interface.">
+    <meta property="twitter:url" content="https://dhanushck.in/project/vijnana26">
+
+    <!-- Preconnecting google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Importing fonts from google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=Inter:wght@300;400;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+
+    <!-- Importing bootstrap icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 
+    <!-- Importing css files -->
     <link rel="stylesheet" href="../../assets/css/project.css">
     <link rel="stylesheet" href="../../assets/css/global.css">
+
+    <!-- Structured data for search engine -->
+    <script type="application/ld+json">
+        {
+        "@context":"https://schema.org",
+        "@type":"SoftwareApplication",
+        "name":"Vijnana 2026",
+        "description":"Webpage developed for the technical fest, Vijnana 2026 containing details and schedules of the events.",
+        "author":{
+            "@type":"Person",
+            "name":"Dhanush CK"
+        },
+        "programmingLanguage":["HTML", "CSS", "JavaScript", "Git"],
+        "codeRepository":"https://github.com/Dhanush-ck/Vijnana26",
+        "url": "https://vijnana26.web.app/"
+        }
+    </script>
 </head>
 <body>
     <div class="container">
-        <div class="navigation-panel slideDown">
-            <a href="../../index.html" class="home-btn" aria-label="Go to Home page">
-                <i class="bi bi-house home"></i>
-            </a>
-            <div class="nav-text">
-                <span>PROJECTS</span>
-            </div>
-        </div>
+        <!-- Navigation bar -->
+        <nav class="top-nav slide-down">
+                <div class="nav-container">
+                    <a href="../../index.html" class="home-btn" aria-label="Go to Home page">
+                        <i class="bi bi-house home"></i>
+                    </a>
+                    <span class="nav-title">ABOUT</span> 
+                    <button id="menuBtn" class="menu-btn" aria-label="Open Navigation menu">
+                            ☰
+                    </button>
+                </div>
+        </nav>
 
+        <!-- Menu bar (Hamburger menu) -->
+        <div class="mobile-menu" id="mobileMenu" aria-label="Menubar">
+                <button class="close-btn" id="closeBtn" aria-label="Close Navigation menu">✕</button>
+
+                <a href="/" aria-label="Landing page">Home</a>
+                <a href="../projects/" aria-label="View projects page">Projects</a>
+                <a href="../skills/" aria-label="View skills page">Skills</a>
+                <a href="../about/" aria-label="Know more about me">About</a>
+                <a href="../experience/" aria-label="Know about professional experience">Experience</a>
+                <a href="../contact/" aria-label="See contact details">Contact</a>
+        </div>
+        <div class="overlay" id="overlay"></div>
+
+        <!-- Main section -->
         <div class="container-elements">
             <div class="topbar">
                 <a href="../../projects/" class="arrow-btn">
@@ -61,7 +125,7 @@
                         Here are some screenshots that show the design, features, and how the project works.
                     </p>
                     <div class="project-info-image-elements">
-                        <img src="../../assets/img/project/vijnana26/1.webp" style="--i:1">
+                        <img src="../../assets/img/project/vijnana26/1.webp" alt="Picture 1" loading="lazy" style="--i:1">
                     </div>
                 </div>
                 <div class="project-info-link fade-in-animation" style="--i:3">
