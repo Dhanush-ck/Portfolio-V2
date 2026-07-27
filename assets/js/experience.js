@@ -24,35 +24,58 @@ document.addEventListener('DOMContentLoaded', () => {
     const progressBar = document.querySelector('.timeline-progress-fill');
     const nodes = document.querySelectorAll('.timeline-node');
 
-    function updateTimelineOnScroll() {
-        if (!timelineWrap || !progressBar) return;
+    // Add this alongside your other selectors:
+const timelineLine = document.querySelector('.timeline-line');
 
-        // Get window and timeline boundaries
-        const rect = timelineWrap.getBoundingClientRect();
-        const viewportHeight = window.innerHeight;
-        
-        // We start the fill when the top of the timeline hits the middle of the viewport
-        const triggerPoint = viewportHeight / 3; 
-        
-        // Calculate the fill percentage
-        let progress = (triggerPoint - rect.top) / rect.height;
-        
-        progress = Math.max(0, Math.min(1, progress));
-        progressBar.style.height = `${progress * 100}%`;
+function updateTimelineOnScroll() {
+    if (!timelineWrap || !progressBar || !timelineLine || !nodes.length) return;
 
-        nodes.forEach(node => {
-            const nodeRect = node.getBoundingClientRect();
-            if (nodeRect.top < triggerPoint) {
-                node.classList.add('active');
-            } else {
-                node.classList.remove('active');
-            }
-        });
+    const viewport = window.innerHeight;
+    const start = viewport * 0.4;
+
+    const lineRect = timelineLine.getBoundingClientRect();
+    const firstNodeRect = nodes[0].getBoundingClientRect();
+    const firstNodeCenterY = firstNodeRect.top + firstNodeRect.height / 2;
+
+    // progress = 0 when first node hits the trigger line
+    // progress = 1 when the bottom of the line hits the trigger line
+    let progress = (start - firstNodeCenterY) / (lineRect.bottom - firstNodeCenterY);
+    progress = Math.max(0, Math.min(1, progress));
+    
+    progressBar.style.height = `${progress * 100}%`;
+    
+    if (window.scrollY === 0) {
+        progressBar.style.height = `2.5%`;
     }
+
+    const atBottom = window.innerHeight + window.scrollY >= (document.documentElement.scrollHeight - 1) ;
+
+    if (atBottom) {
+        progressBar.style.height = `100%`;
+    }
+
+    nodes.forEach(node => {
+        const nodeTop = node.getBoundingClientRect().top;
+        node.classList.toggle('active', nodeTop <= start);
+    });
+}
     window.addEventListener('scroll', updateTimelineOnScroll, { passive: true });
     window.addEventListener('resize', updateTimelineOnScroll, { passive: true });
 
     updateTimelineOnScroll();
+
+    // Mouse-follow spotlight
+    const cards = document.querySelectorAll(".timeline-item");
+
+    cards.forEach((card) => {
+        card.addEventListener("mousemove", (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = ((e.clientX - rect.left) / rect.width) * 100;
+            const y = ((e.clientY - rect.top) / rect.height) * 100;
+            card.style.setProperty("--mx", `${x}%`);
+            card.style.setProperty("--my", `${y}%`);
+        });
+    });
 });
 
 // Navigation scroll state
