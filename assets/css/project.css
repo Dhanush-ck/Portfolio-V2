@@ -129,11 +129,27 @@
 
 /* Menu bar (Hamburger menu) */
 .menu-btn{
-    font-size:28px;
-    color:white;
-    background:none;
-    border:none;
-    cursor:pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    transition: var(--transition-smooth);
+    color: var(--text-muted);
+    cursor: pointer;
+}
+
+.menu-btn:hover {
+    color: var(--primary);
+    border-color: var(--primary);
+    box-shadow: 0 0 15px var(--glass-glow);
+}
+
+.menu {
+    font-size: 20px;
 }
 
 .mobile-menu{
@@ -167,7 +183,7 @@
 }
 
 .mobile-menu a:hover{
-    color:var(--orchid);
+    color:var(--amethyst);
     transform:translateX(6px);
 }
 
@@ -175,11 +191,27 @@
     position:absolute;
     top:25px;
     right:25px;
-    background:none;
-    border:none;
-    color:white;
-    font-size:28px;
-    cursor:pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    transition: var(--transition-smooth);
+    color: var(--text-muted);
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: var(--primary);
+    border-color: var(--primary);
+    box-shadow: 0 0 15px var(--glass-glow);
+}
+
+.close {
+    font-size: 20px;
 }
 
 .overlay{
