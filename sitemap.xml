@@ -32,11 +32,13 @@
         <lastmod>2026-07-27</lastmod>
     </url>
 
-    <!-- Bmi Calculator Page (Project) -->
+    <!-- 404 Page -->
     <url>
-        <loc>https://dhanushck.in/project/bmicalculator</loc>
+        <loc>https://dhanushck.in/404.html</loc>
         <lastmod>2026-07-27</lastmod>
     </url>
+
+    <!-- Projects  -->
 
     <!-- Portfolio V1 (Project) -->
     <url>
@@ -50,9 +52,15 @@
         <lastmod>2026-07-27</lastmod>
     </url>
 
-    <!-- Treasure Hunt (Project) -->
+    <!-- Vijnana25 (Project) -->
     <url>
-        <loc>https://dhanushck.in/project/treasurehunt</loc>
+        <loc>https://dhanushck.in/project/vijnana25</loc>
+        <lastmod>2026-07-27</lastmod>
+    </url>
+
+    <!-- Bmi Calculator Page (Project) -->
+    <url>
+        <loc>https://dhanushck.in/project/bmicalculator</loc>
         <lastmod>2026-07-27</lastmod>
     </url>
 
@@ -62,16 +70,17 @@
         <lastmod>2026-07-27</lastmod>
     </url>
 
-    <!-- Vijnana25 (Project) -->
-    <url>
-        <loc>https://dhanushck.in/project/vijnana25</loc>
-        <lastmod>2026-07-27</lastmod>
-    </url>
-
     <!-- Vijnana26 (Project) -->
     <url>
         <loc>https://dhanushck.in/project/vijnana26</loc>
         <lastmod>2026-07-27</lastmod>
     </url>
+
+    <!-- Treasure Hunt (Project) -->
+    <url>
+        <loc>https://dhanushck.in/project/treasurehunt</loc>
+        <lastmod>2026-07-27</lastmod>
+    </url>
+
 
 </urlset>
