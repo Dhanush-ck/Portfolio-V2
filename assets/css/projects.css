@@ -135,11 +135,27 @@ body{
 
 /* Menu bar (Hamburger menu) */
 .menu-btn{
-    font-size:28px;
-    color:white;
-    background:none;
-    border:none;
-    cursor:pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    transition: var(--transition-smooth);
+    color: var(--text-muted);
+    cursor: pointer;
+}
+
+.menu-btn:hover {
+    color: var(--primary);
+    border-color: var(--primary);
+    box-shadow: 0 0 15px var(--glass-glow);
+}
+
+.menu {
+    font-size: 20px;
 }
 
 .mobile-menu{
@@ -173,7 +189,7 @@ body{
 }
 
 .mobile-menu a:hover{
-    color:var(--orchid);
+    color:var(--amethyst);
     transform:translateX(6px);
 }
 
@@ -186,11 +202,27 @@ body{
     position:absolute;
     top:25px;
     right:25px;
-    background:none;
-    border:none;
-    color:white;
-    font-size:28px;
-    cursor:pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    transition: var(--transition-smooth);
+    color: var(--text-muted);
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: var(--primary);
+    border-color: var(--primary);
+    box-shadow: 0 0 15px var(--glass-glow);
+}
+
+.close {
+    font-size: 20px;
 }
 
 .overlay{
@@ -221,7 +253,7 @@ body{
 .dropdown {
     display: flex;
     position: relative;
-    margin: 0 20px 0 20px;
+    margin: 0 20px 5px 20px;
 }
 
 .sort {
@@ -233,7 +265,7 @@ body{
 .selected {
     cursor: pointer;
     padding: 10px;
-    width: 100px;
+    width: 120px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -243,7 +275,7 @@ body{
     border:1px solid var(--border);
     border-radius:14px;
     transition:.35s;
-    margin: 5px 0 5px 0;
+    margin: 5px 0 0px 0;
 }
 
 .selected:hover{
@@ -270,17 +302,22 @@ body{
     border-radius:14px;
     overflow:hidden;
     border:1px solid var(--border);
+    border-top: none;
 }
 
 .dropdown-list li {
-    width: 100px;
+    width: 120px;
     padding: 10px;
     display: flex;
     justify-content: center;
     cursor: pointer;
     transition: background-color 0.2s ease;
-    border: 1px solid rgb(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgb(255, 255, 255, 0.2);
     transition:.3s;
+}
+
+.dropdown-list li:last-child {
+    border-bottom: none;
 }
 
 .dropdown-list li:hover {
@@ -383,7 +420,7 @@ body{
     align-items: center;
     opacity: 0;
     background-color: #222;
-    border-radius: 20px;
+    border-radius: 24px;
     background: linear-gradient(180deg, rgba(8,8,10,.2),rgba(8,8,10,.88));
     backdrop-filter:blur(6px);
     transition:.35s;
