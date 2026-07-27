@@ -22,7 +22,7 @@
         <meta property="og:type" content="website">
         <meta property="og:title" content="Dhanush C K - Portfolio">
         <meta property="og:description" content="Portfolio of Dhanush C K, BCA Graduate and Full Stack Developer specializing in Django, JavaScript, Python and AI-powered web applications. View projects, skills and experience.">
-        <meta property="og:image" content="https://dhanushck.in/assets/main.webp">
+        <meta property="og:image" content="https://dhanushck.in/assets/img/main.webp">
         <meta property="og:url" content="https://dhanushck.in/">
         <meta property="og:site_name" content="Dhanush C K">
         
@@ -31,7 +31,7 @@
         <meta name="twitter:card" content="summary_large_image">
         <meta property="twitter:title" content="Dhanush C K - Portfolio">
         <meta property="twitter:description" content="Portfolio of Dhanush C K, BCA Graduate and Full Stack Developer specializing in Django, JavaScript, Python and AI-powered web applications. View projects, skills and experience.">
-        <meta property="twitter:image" content="https://dhanushck.in/assets/main.webp">
+        <meta property="twitter:image" content="https://dhanushck.in/assets/img/main.webp">
         
         <!-- Preconnecting google fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,6 +40,9 @@
         <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=Inter:wght@300;400;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
 
         <link rel="preload" as="image" href="./assets/img/main.webp">
+
+        <!-- Importing bootstrap icons -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 
         <!-- Importing css files  -->
         <link rel="stylesheet" href="./assets/css/index.css">
@@ -82,13 +85,15 @@
             </ul>
 
             <button id="menuBtn" class="menu-btn" aria-label="Open Navigation menu">
-                ☰
+                <i class="bi bi-list menu"></i>
             </button>
         </nav>
 
         <!-- Navigation Menu (Hamburger Menu) -->
         <div class="mobile-menu" id="mobileMenu">
-            <button class="close-btn" id="closeBtn" aria-label="Close Navigation menu">✕</button>
+            <button class="close-btn" id="closeBtn" aria-label="Close Navigation menu">
+                    <i class="bi bi-x close"></i>
+            </button>
 
             <a href="" class="active-page" aria-label="Landing page">Home</a>
             <a href="./projects/" aria-label="View projects page">Projects</a>
