@@ -312,11 +312,27 @@ body::after{
 
 /* Menu bar (Hamburger menu) */
 .menu-btn{
-    font-size:28px;
-    color:white;
-    background:none;
-    border:none;
-    cursor:pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    transition: var(--transition-smooth);
+    color: var(--text-muted);
+    cursor: pointer;
+}
+
+.menu-btn:hover {
+    color: var(--primary);
+    border-color: var(--primary);
+    box-shadow: 0 0 15px var(--glass-glow);
+}
+
+.menu {
+    font-size: 20px;
 }
 
 .mobile-menu{
@@ -347,7 +363,7 @@ body::after{
 }
 
 .mobile-menu a:hover{
-    color:var(--orchid);
+    color:var(--amethyst);
     transform:translateX(6px);
 }
 
@@ -360,11 +376,27 @@ body::after{
     position:absolute;
     top:25px;
     right:25px;
-    background:none;
-    border:none;
-    color:white;
-    font-size:28px;
-    cursor:pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    transition: var(--transition-smooth);
+    color: var(--text-muted);
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: var(--primary);
+    border-color: var(--primary);
+    box-shadow: 0 0 15px var(--glass-glow);
+}
+
+.close {
+    font-size: 20px;
 }
 
 .overlay{
@@ -582,6 +614,7 @@ body::after{
     position: relative;
     padding-left: 60px;
     margin-bottom: 3rem;
+    display: flex;
 }
 
 .timeline-item:last-child {
@@ -590,8 +623,8 @@ body::after{
 
 .timeline-dot {
     position: absolute;
+    align-self: center;
     left: 12px;
-    top: 24px;
     width: 16px;
     height: 16px;
     background: var(--primary);
@@ -602,6 +635,7 @@ body::after{
 
 .timeline-content {
     padding: 2rem;
+    width: 100%;
 }
 
 .timeline-content h3 {
@@ -768,6 +802,7 @@ body::after{
     letter-spacing:.4px;
     color:var(--mist);
     transition:border-color .3s, color .3s, background .3s, transform .3s;
+    cursor: default;
 }
 
 .chip:hover{
@@ -921,8 +956,13 @@ body::after{
         padding-left:30px;
     }
 
+    .timeline-item {
+        display: block;
+    }
+
     .timeline-dot{
         left:-17px;
+        top: 24px;
     }
 
 }
