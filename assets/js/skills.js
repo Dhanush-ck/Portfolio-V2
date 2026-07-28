@@ -155,46 +155,156 @@ const dropdownsLeft = [selectedLeft, listItemsLeft[0], listItemsLeft[1], listIte
 var currentImageLinks = imageLinks;
 var currentSort;
 
-// Animation
-dropdowns.forEach((dropdown)=> {
-    dropdown.addEventListener('mouseover', ()=>{
-        list.classList.add('fadeIn');
-        list.classList.remove('fadeOut7');
-        list.classList.add('show');
-        arrow.style.transform = "rotate(180deg)";
-    })
-    
-    dropdown.addEventListener('mouseout', ()=> {
-        arrow.style.transform = "rotate(0deg)";
-        list.classList.add('fadeOut7');
-        list.addEventListener('animationend', (e)=>{
-            if(e.animationName ===  'fadeOut'){
-                list.classList.remove('show');
-            }
-            list.removeEventListener('animationend', e);
-        })
-    })
-})
+const isTouchDevice = window.matchMedia("(hover: none)").matches;
 
-dropdownsLeft.forEach((dropdownLeft)=>{
-    dropdownLeft.addEventListener('mouseover', ()=>{
-        listLeft.classList.add('fadeIn');
-        listLeft.classList.remove('fadeOut7');
-        listLeft.classList.add('show');
-        arrowLeft.style.transform = "rotate(180deg)";
-    })
-    
-    dropdownLeft.addEventListener('mouseout', ()=> {
-        arrowLeft.style.transform = "rotate(0deg)";
-        listLeft.classList.add('fadeOut7');
-        listLeft.addEventListener('animationend', (e)=>{
-            if(e.animationName ===  'fadeOut'){
-                listLeft.classList.remove('show');
+// Animation
+if (isTouchDevice) {
+
+    // For touchscreen device
+
+    // Right Dropdown
+    dropdowns.forEach((dropdown) => {
+        let isOpen = false;
+
+        function openDropdown() {
+            list.style.zIndex = "1000";
+            list.classList.remove("fadeOut7");
+            list.classList.add("fadeIn", "show");
+            arrow.style.transform = "rotate(180deg)";
+            isOpen = true;
+        }
+
+        function closeDropdown() {
+            if (!isOpen) return;
+
+            arrow.style.transform = "rotate(0deg)";
+            list.classList.remove("fadeIn");
+            list.classList.add("fadeOut7");
+
+            const handleAnimationEnd = (e) => {
+                if (e.animationName === "fadeOut") {
+                    list.style.zIndex = "0";
+                    list.classList.remove("show");
+                    list.removeEventListener("animationend", handleAnimationEnd);
+                }
+            };
+
+            list.addEventListener("animationend", handleAnimationEnd);
+
+            isOpen = false;
+        }
+
+        dropdown.addEventListener("click", (e) => {
+            e.stopPropagation();
+
+            if (isOpen) {
+                closeDropdown();
+            } else {
+                openDropdown();
             }
-            listLeft.removeEventListener('animationend', e);
+        });
+
+        document.addEventListener("click", (e) => {
+            if (!dropdown.contains(e.target)) {
+                closeDropdown();
+            }
+        });
+    });
+
+    // Left Dropdown
+    dropdownsLeft.forEach((dropdown) => {
+        let isOpenLeft = false;
+
+        function openDropdownLeft() {
+            listLeft.style.zIndex = "1000";
+            listLeft.classList.remove("fadeOut7");
+            listLeft.classList.add("fadeIn", "show");
+            arrowLeft.style.transform = "rotate(180deg)";
+            isOpenLeft = true;
+        }
+
+        function closeDropdownLeft() {
+            if (!isOpenLeft) return;
+
+            arrowLeft.style.transform = "rotate(0deg)";
+            listLeft.classList.remove("fadeIn");
+            listLeft.classList.add("fadeOut7");
+
+            const handleAnimationEndLeft = (e) => {
+                if (e.animationName === "fadeOut") {
+                    listLeft.style.zIndex = "0";
+                    listLeft.classList.remove("show");
+                    listLeft.removeEventListener("animationend", handleAnimationEndLeft);
+                }
+            };
+
+            listLeft.addEventListener("animationend", handleAnimationEndLeft);
+
+            isOpenLeft = false;
+        }
+
+        dropdown.addEventListener("click", (e) => {
+            e.stopPropagation();
+
+            if (isOpenLeft) {
+                closeDropdownLeft();
+            } else {
+                openDropdownLeft();
+            }
+        });
+
+        document.addEventListener("click", (e) => {
+            if (!dropdown.contains(e.target)) {
+                closeDropdownLeft();
+            }
+        });
+    });
+
+} else {
+    // For mouse device
+
+    // Right Dropdown
+    dropdowns.forEach((dropdown)=> {
+        dropdown.addEventListener('mouseover', ()=>{
+            list.classList.add('fadeIn');
+            list.classList.remove('fadeOut7');
+            list.classList.add('show');
+            arrow.style.transform = "rotate(180deg)";
+        })
+        
+        dropdown.addEventListener('mouseout', ()=> {
+            arrow.style.transform = "rotate(0deg)";
+            list.classList.add('fadeOut7');
+            list.addEventListener('animationend', (e)=>{
+                if(e.animationName ===  'fadeOut'){
+                    list.classList.remove('show');
+                }
+                list.removeEventListener('animationend', e);
+            })
         })
     })
-})
+
+    // Left Dropdown
+    dropdownsLeft.forEach((dropdownLeft)=>{
+        dropdownLeft.addEventListener('mouseover', ()=>{
+            listLeft.classList.add('fadeIn');
+            listLeft.classList.remove('fadeOut7');
+            listLeft.classList.add('show');
+            arrowLeft.style.transform = "rotate(180deg)";
+        })
+        
+        dropdownLeft.addEventListener('mouseout', ()=> {
+            arrowLeft.style.transform = "rotate(0deg)";
+            listLeft.classList.add('fadeOut7');
+            listLeft.addEventListener('animationend', (e)=>{
+                if(e.animationName ===  'fadeOut'){
+                    listLeft.classList.remove('show');
+                }
+                listLeft.removeEventListener('animationend', e);
+            })
+        })
+    })
+}
 
 //Filter
 listItemsLeft.forEach((listItemLeft)=>{
@@ -223,7 +333,7 @@ listItemsLeft.forEach((listItemLeft)=>{
         }
         currentImageLinks = tempLinks;
         sortElements(currentSort);
-        listLeft.classList.remove('show-left');
+        listLeft.classList.remove('show');
         orderLeft.innerHTML = listItemLeft.innerHTML;
         arrowLeft.style.transform = "rotate(0deg)";
     })
