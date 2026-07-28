@@ -542,11 +542,11 @@ body{
     }
 
     .selected {
-        width: 140px;
+        width: 150px;
     }
 
     .dropdown-list li {
-        width: 140px;
+        width: 150px;
     }
 
     .project-name {
@@ -577,11 +577,11 @@ body{
     }
 
     .selected {
-        width: 120px;
+        width: 140px;
     }
 
     .dropdown-list li {
-        width: 120px;
+        width: 140px;
     }
 }
 
@@ -603,11 +603,11 @@ body{
     }
 
     .selected {
-        width: 100px;
+        width: 140px;
     }
 
     .dropdown-list li {
-        width: 100px;
+        width: 140px;
     }
 
     .projects-elements p {
