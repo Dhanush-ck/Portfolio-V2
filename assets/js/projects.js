@@ -10,28 +10,87 @@ const projectElements = document.querySelectorAll('.projects-elements');
 
 const dropdowns = [selected, listItems[0], listItems[1], listItems[2], listItems[3]];
 
+const isTouchDevice = window.matchMedia("(hover: none)").matches;
+
 // Animations
-dropdowns.forEach((dropdown)=> {
-    dropdown.addEventListener('mouseover', ()=>{
-        list.style.zIndex = "1000";
-        list.classList.add('fadeIn');
-        list.classList.remove('fadeOut7');
-        list.classList.add('show');
-        arrow.style.transform = "rotate(180deg)";
-    })
-    
-    dropdown.addEventListener('mouseout', ()=> {
-        arrow.style.transform = "rotate(0deg)";
-        list.classList.add('fadeOut7');
-        list.addEventListener('animationend', (e)=> {
-            if (e.animationName === 'fadeOut') {
-                list.style.zIndex = "0";
-                list.classList.remove('show');
-                list.removeEventListener('animationend');
+if (isTouchDevice) {
+
+    // For touchscreen device
+    dropdowns.forEach((dropdown) => {
+        let isOpen = false;
+
+        function openDropdown() {
+            list.style.zIndex = "1000";
+            list.classList.remove("fadeOut7");
+            list.classList.add("fadeIn", "show");
+            arrow.style.transform = "rotate(180deg)";
+            isOpen = true;
+        }
+
+        function closeDropdown() {
+            if (!isOpen) return;
+
+            arrow.style.transform = "rotate(0deg)";
+            list.classList.remove("fadeIn");
+            list.classList.add("fadeOut7");
+
+            const handleAnimationEnd = (e) => {
+                if (e.animationName === "fadeOut") {
+                    list.style.zIndex = "0";
+                    list.classList.remove("show");
+                    list.removeEventListener("animationend", handleAnimationEnd);
+                }
+            };
+
+            list.addEventListener("animationend", handleAnimationEnd);
+
+            isOpen = false;
+        }
+
+        // Toggle on click
+        dropdown.addEventListener("click", (e) => {
+            e.stopPropagation();
+
+            if (isOpen) {
+                closeDropdown();
+            } else {
+                openDropdown();
             }
         });
+
+        // Close when clicking outside
+        document.addEventListener("click", (e) => {
+            if (!dropdown.contains(e.target)) {
+                closeDropdown();
+            }
+        });
+    });
+
+} else {
+
+    // For mouse device
+    dropdowns.forEach((dropdown)=> {
+        dropdown.addEventListener('mouseover', ()=>{
+            list.style.zIndex = "1000";
+            list.classList.add('fadeIn');
+            list.classList.remove('fadeOut7');
+            list.classList.add('show');
+            arrow.style.transform = "rotate(180deg)";
+        })
+        
+        dropdown.addEventListener('mouseout', ()=> {
+            arrow.style.transform = "rotate(0deg)";
+            list.classList.add('fadeOut7');
+            list.addEventListener('animationend', (e)=> {
+                if (e.animationName === 'fadeOut') {
+                    list.style.zIndex = "0";
+                    list.classList.remove('show');
+                    list.removeEventListener('animationend');
+                }
+            });
+        })
     })
-})
+}
 
 // Portfolio list
 const projectList = [{
