@@ -244,14 +244,14 @@ function sortElements(e) {
 sortElements(3);
 
 // Page refresh after window resize
-let resizeTimer;
+// let resizeTimer;
 
-window.addEventListener("resize", () => {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(() => {
-        location.reload();
-    }, 1); 
-});
+// window.addEventListener("resize", () => {
+//     clearTimeout(resizeTimer);
+//     resizeTimer = setTimeout(() => {
+//         location.reload();
+//     }, 1); 
+// });
 
 // Side menu (Hamburger menu)
 const menuBtn = document.getElementById("menuBtn");
